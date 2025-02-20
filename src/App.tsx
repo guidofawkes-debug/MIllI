@@ -30,15 +30,18 @@ function App() {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <div className="relative w-10 h-10 bg-black rounded-full flex items-center justify-center">
-                <Alien className="w-8 h-8 text-[#00ff00]" />
-                <div className="absolute inset-0 border-2 border-[#00ff00] rounded-full animate-pulse"></div>
+          <Alien className="w-8 h-8 text-[#00ff00]" />
+          <div className="absolute inset-0 border-2 border-[#00ff00] rounded-full animate-pulse"></div>
               </div>
               <span className="text-xl font-bold tracking-wider">MILLI</span>
             </div>
             <div className="hidden md:flex space-x-8">
               <a href="#services" className="hover:text-[#00ff00] transition-colors">Services</a>
               <a href="#vision" className="hover:text-[#00ff00] transition-colors">Vision</a>
-              <a href="#contact" className="hover:text-[#00ff00] transition-colors">Contact</a>
+              <a href="tel:0786838849" className="inline-flex items-center space-x-2 bg-[#00ff00] text-black px-4 py-2 rounded-full hover:bg-[#00cc00] transition-colors">
+          <span>Call Now</span>
+          <ChevronRight className="w-4 h-4" />
+              </a>
             </div>
           </div>
         </nav>
@@ -47,22 +50,22 @@ function App() {
           <div className={`transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
             <div className="flex items-center mb-8">
               <div className="relative w-20 h-20 mr-6">
-                <div className="absolute inset-0 bg-black rounded-full"></div>
-                <Alien className="relative z-10 w-20 h-20 text-[#00ff00]" />
-                <div className="absolute inset-0 border-2 border-[#00ff00] rounded-full animate-ping"></div>
+          <div className="absolute inset-0 bg-black rounded-full"></div>
+          <Alien className="relative z-10 w-20 h-20 text-[#00ff00]" />
+          <div className="absolute inset-0 border-2 border-[#00ff00] rounded-full animate-ping"></div>
               </div>
               <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-[#00ff00] to-[#00cc00] bg-clip-text text-transparent">
-                Straight Outta Area 51
+          Straight Outta Area 51
               </h1>
             </div>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl">
               Advanced AI solutions beyond conventional boundaries.
               Welcome to the next evolution of technology.
             </p>
-            <button className="group flex items-center space-x-2 bg-[#00ff00] hover:bg-[#00cc00] text-black font-bold px-8 py-3 rounded-full transition-all">
-              <span>Enter The Void</span>
+            <a href="tel:+1234567890" className="group flex items-center space-x-2 bg-[#00ff00] hover:bg-[#00cc00] text-black font-bold px-8 py-3 rounded-full transition-all">
+              <span>Call Us Now</span>
               <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
+            </a>
           </div>
         </div>
       </div>
