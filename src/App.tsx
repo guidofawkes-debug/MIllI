@@ -158,8 +158,7 @@ function App() {
               
               <a href="https://www.instagram.com/yourprofile" className="text-gray-390 hover:text-[#00ff00] transition-colors">Instagram</a>
               
-               <a href="https://www.instagram.com/yourprofile" className="text-gray-390 hover:text-[#00ff00] transition-colors">Instagram</a> 
-                <a href="https://www.facebook.com/yourprofile" className="text-gray-400 hover:text-[#00ff00] transition-colors">Facebook</a>
+                <a href="https://www.facebook.com/yourprofile" className="text-gray-390 hover:text-[#00ff00] transition-colors">Facebook</a>
               
             </div>
           </div>
