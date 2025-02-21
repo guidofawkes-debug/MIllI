@@ -126,7 +126,8 @@ function App() {
                 and digital alchemists are breaking the barriers between possible and impossible.
               </p>
               <button className="bg-transparent border-2 border-[#00ff00] text-[#00ff00] px-6 py-2 rounded-full hover:bg-[#00ff00] hover:text-black transition-all">
-                Join The Revolution
+              /* Join The Revolution*/
+              Sign Up for Early Access
               </button>
             </div>
             <div className="md:w-1/2 flex justify-center">
@@ -154,9 +155,9 @@ function App() {
             <div className="flex space-x-6">
               <a href="https://twitter.com/yourprofile" className="text-gray-400 hover:text-[#00ff00] transition-colors">Twitter</a>
               
-              <a href="https://www.linkedin.com/in/yourprofile" className="text-gray-390 hover:text-[#00ff00] transition-colors">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/millan-ashly-type" className="text-gray-390 hover:text-[#00ff00] transition-colors">LinkedIn</a>
               
-              <a href="https://www.instagram.com/yourprofile" className="text-gray-390 hover:text-[#00ff00] transition-colors">Instagram</a>
+              <a href="https://github.com/Aly3n2077" className="text-gray-390 hover:text-[#00ff00] transition-colors">Instagram</a>
               
                 <a href="https://www.facebook.com/yourprofile" className="text-gray-390 hover:text-[#00ff00] transition-colors">Facebook</a>
               
