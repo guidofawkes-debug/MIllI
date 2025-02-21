@@ -33,12 +33,12 @@ function App() {
           <Alien className="w-8 h-8 text-[#00ff00]" />
           <div className="absolute inset-0 border-2 border-[#00ff00] rounded-full animate-pulse"></div>
               </div>
-              <span className="text-xl font-bold tracking-wider">MILLI</span>
+              <span className="text-xl font-bold tracking-wider">MIllI</span>
             </div>
             <div className="hidden md:flex space-x-8">
               <a href="#services" className="hover:text-[#00ff00] transition-colors">Services</a>
               <a href="#vision" className="hover:text-[#00ff00] transition-colors">Vision</a>
-              <a href="tel:0786838849" className="inline-flex items-center space-x-2 bg-[#00ff00] text-black px-4 py-2 rounded-full hover:bg-[#00cc00] transition-colors">
+              <a href="tel:+263786838849" className="inline-flex items-center space-x-2 bg-[#00ff00] text-black px-4 py-2 rounded-full hover:bg-[#00cc00] transition-colors">
           <span>Call Now</span>
           <ChevronRight className="w-4 h-4" />
               </a>
@@ -62,7 +62,7 @@ function App() {
               Advanced AI solutions beyond conventional boundaries.
               Welcome to the next evolution of technology.
             </p>
-            <a href="tel:+1234567890" className="group flex items-center space-x-2 bg-[#00ff00] hover:bg-[#00cc00] text-black font-bold px-8 py-3 rounded-full transition-all">
+            <a href="tel:+263786838849" className="group flex items-center space-x-2 bg-[#00ff00] hover:bg-[#00cc00] text-black font-bold px-8 py-3 rounded-full transition-all">
               <span>Call Us Now</span>
               <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
@@ -149,12 +149,18 @@ function App() {
                 <Alien className="w-6 h-6 text-[#00ff00]" />
                 <div className="absolute inset-0 border-2 border-[#00ff00] rounded-full"></div>
               </div>
-              <span className="text-lg font-bold">MILLI</span>
+              <span className="text-lg font-bold">MIllI</span>
             </div>
             <div className="flex space-x-6">
-              <a href="#" className="text-gray-400 hover:text-[#00ff00] transition-colors">Twitter</a>
-              <a href="#" className="text-gray-400 hover:text-[#00ff00] transition-colors">LinkedIn</a>
-              <a href="#" className="text-gray-400 hover:text-[#00ff00] transition-colors">Contact</a>
+              <a href="https://twitter.com/yourprofile" className="text-gray-400 hover:text-[#00ff00] transition-colors">Twitter</a>
+              
+              <a href="https://www.linkedin.com/in/yourprofile" className="text-gray-400 hover:text-[#00ff00] transition-colors">LinkedIn</a>
+              
+              <a href="https://www.instagram.com/yourprofile" className="text-gray-400 hover:text-[#00ff00] transition-colors">Instagram</a>
+              
+               <a href="https://www.instagram.com/yourprofile" className="text-gray-400 hover:text-[#00ff00] transition-colors">Instagram</a> 
+                <a href="https://www.facebook.com/yourprofile" className="text-gray-400 hover:text-[#00ff00] transition-colors">Facebook</a>
+              
             </div>
           </div>
           <div className="mt-8 text-center text-gray-600">
