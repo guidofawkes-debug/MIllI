@@ -154,11 +154,11 @@ function App() {
             <div className="flex space-x-6">
               <a href="https://twitter.com/yourprofile" className="text-gray-400 hover:text-[#00ff00] transition-colors">Twitter</a>
               
-              <a href="https://www.linkedin.com/in/yourprofile" className="text-gray-400 hover:text-[#00ff00] transition-colors">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/yourprofile" className="text-gray-390 hover:text-[#00ff00] transition-colors">LinkedIn</a>
               
-              <a href="https://www.instagram.com/yourprofile" className="text-gray-400 hover:text-[#00ff00] transition-colors">Instagram</a>
+              <a href="https://www.instagram.com/yourprofile" className="text-gray-390 hover:text-[#00ff00] transition-colors">Instagram</a>
               
-               <a href="https://www.instagram.com/yourprofile" className="text-gray-400 hover:text-[#00ff00] transition-colors">Instagram</a> 
+               <a href="https://www.instagram.com/yourprofile" className="text-gray-390 hover:text-[#00ff00] transition-colors">Instagram</a> 
                 <a href="https://www.facebook.com/yourprofile" className="text-gray-400 hover:text-[#00ff00] transition-colors">Facebook</a>
               
             </div>
