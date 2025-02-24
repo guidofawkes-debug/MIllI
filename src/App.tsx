@@ -3,6 +3,7 @@ import { AlignCenter as Alien, Brain, Shield, Code, ChevronRight, Sparkles } fro
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
@@ -125,9 +126,11 @@ function App() {
                 We're not just predicting the future - we're reverse engineering it. Our team of rogue scientists 
                 and digital alchemists are breaking the barriers between possible and impossible.
               </p>
-              <button className="bg-transparent border-2 border-[#00ff00] text-[#00ff00] px-6 py-2 rounded-full hover:bg-[#00ff00] hover:text-black transition-all">
-              /* Join The Revolution*/
-              Sign Up for Early Access
+              <button 
+                className="bg-transparent border-2 border-[#00ff00] text-[#00ff00] px-6 py-2 rounded-full hover:bg-[#00ff00] hover:text-black transition-all"
+                onClick={() => setIsModalOpen(true)}
+              >
+                Join The Revolution - Sign Up for Early Access
               </button>
             </div>
             <div className="md:w-1/2 flex justify-center">
@@ -140,6 +143,32 @@ function App() {
           </div>
         </div>
       </section>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+          <div className="bg-white text-black p-8 rounded-lg max-w-md w-full">
+            <h2 className="text-2xl font-bold mb-4">Early Access Sign-Up</h2>
+            <form>
+              <div className="mb-4">
+                <label className="block text-sm font-medium mb-2" htmlFor="name">Name</label>
+                <input className="w-full px-3 py-2 border border-gray-300 rounded" type="text" id="name" name="name" required />
+              </div>
+              <div className="mb-4">
+                <label className="block text-sm font-medium mb-2" htmlFor="email">Email</label>
+                <input className="w-full px-3 py-2 border border-gray-300 rounded" type="email" id="email" name="email" required />
+              </div>
+              <button className="bg-[#00ff00] text-black px-4 py-2 rounded-full hover:bg-[#00cc00] transition-all" type="submit">Sign Up</button>
+            </form>
+            <button 
+              className="mt-4 text-gray-500 hover:text-gray-700 transition-all"
+              onClick={() => setIsModalOpen(false)}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Footer */}
       <footer className="bg-black border-t border-[#00ff00]/20 py-12">
