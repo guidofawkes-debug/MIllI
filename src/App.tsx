@@ -1,9 +1,79 @@
 import React, { useState, useEffect } from 'react';
-import { AlignCenter as Alien, Brain, Shield, Code, ChevronRight, Sparkles } from 'lucide-react';
+import { AlignCenter as Alien, Brain, Shield, Code, ChevronRight, Sparkles, X } from 'lucide-react';
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeService, setActiveService] = useState<number | null>(null);
+
+  const services = [
+    {
+      icon: <Brain className="w-8 h-8 text-[#00ff00]" />,
+      title: "AI Model Design",
+      description: "Extraterrestrial intelligence solutions that evolve beyond human limitations",
+      details: {
+        fullDescription: "Our AI Model Design service leverages cutting-edge machine learning algorithms and neural networks to create sophisticated AI solutions that push the boundaries of what's possible.",
+        features: [
+          "Custom machine learning algorithms",
+          "Natural language processing",
+          "Computer vision systems",
+          "Predictive analytics",
+          "Neural network architecture design"
+        ],
+        benefits: [
+          "Increased operational efficiency",
+          "Enhanced decision-making capabilities",
+          "Automated process optimization",
+          "Scalable AI solutions",
+          "Future-proof technology integration"
+        ]
+      }
+    },
+    {
+      icon: <Code className="w-8 h-8 text-[#00ff00]" />,
+      title: "Systems Architecture",
+      description: "Infrastructure from the future, built for the present",
+      details: {
+        fullDescription: "Our Systems Architecture service provides robust, scalable, and future-proof infrastructure solutions designed to handle the most demanding technological challenges.",
+        features: [
+          "Microservices architecture",
+          "Cloud-native solutions",
+          "Distributed systems design",
+          "High-availability infrastructure",
+          "Security-first architecture"
+        ],
+        benefits: [
+          "Improved system reliability",
+          "Enhanced scalability",
+          "Reduced operational costs",
+          "Better resource utilization",
+          "Faster time-to-market"
+        ]
+      }
+    },
+    {
+      icon: <Shield className="w-8 h-8 text-[#00ff00]" />,
+      title: "Quantum Security",
+      description: "Protection protocols from another dimension",
+      details: {
+        fullDescription: "Our Quantum Security solutions provide next-generation protection against both classical and quantum threats, ensuring your data remains secure in the post-quantum era.",
+        features: [
+          "Quantum-resistant encryption",
+          "Post-quantum cryptography",
+          "Quantum key distribution",
+          "Secure quantum communication",
+          "Quantum random number generation"
+        ],
+        benefits: [
+          "Future-proof security",
+          "Protection against quantum attacks",
+          "Enhanced data privacy",
+          "Compliance with emerging standards",
+          "Advanced threat detection"
+        ]
+      }
+    }
+  ];
 
   useEffect(() => {
     setIsVisible(true);
@@ -71,29 +141,13 @@ function App() {
         </div>
       </div>
 
-      {/* Services Section */}
+      {/* Enhanced Services Section */}
       <section id="services" className="py-20 bg-gradient-to-b from-black to-[#003300]/20">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold mb-16 text-center">Classified Operations</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                icon: <Brain className="w-8 h-8 text-[#00ff00]" />,
-                title: "AI Model Design",
-                description: "Extraterrestrial intelligence solutions that evolve beyond human limitations"
-              },
-              {
-                icon: <Code className="w-8 h-8 text-[#00ff00]" />,
-                title: "Systems Architecture",
-                description: "Infrastructure from the future, built for the present"
-              },
-              {
-                icon: <Shield className="w-8 h-8 text-[#00ff00]" />,
-                title: "Quantum Security",
-                description: "Protection protocols from another dimension"
-              }
-            ].map((service, index) => (
+            {services.map((service, index) => (
               <div 
                 key={index}
                 className="group relative bg-gradient-to-br from-black to-[#001a00] p-8 rounded-xl hover:shadow-2xl hover:shadow-[#00ff00]/20 transition-all duration-300 border border-[#00ff00]/20"
@@ -103,16 +157,80 @@ function App() {
                   {service.icon}
                   <h3 className="text-xl font-bold mt-4 mb-2">{service.title}</h3>
                   <p className="text-gray-400">{service.description}</p>
-                  <div className="mt-6 flex items-center text-[#00ff00] group-hover:text-[#00cc00]">
-                    <span>Access Files</span>
+                  <button
+                    onClick={() => setActiveService(index)}
+                    className="mt-6 flex items-center text-[#00ff00] group-hover:text-[#00cc00]"
+                  >
+                    <span>Learn More</span>
                     <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </div>
+                  </button>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Service Modal */}
+      {activeService !== null && (
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
+          <div className="bg-[#001a00] border border-[#00ff00]/20 rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="sticky top-0 bg-[#001a00] p-6 border-b border-[#00ff00]/20">
+              <div className="flex items-center justify-between">
+                <h3 className="text-2xl font-bold text-[#00ff00]">
+                  {services[activeService].title}
+                </h3>
+                <button
+                  onClick={() => setActiveService(null)}
+                  className="text-gray-400 hover:text-[#00ff00] transition-colors"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
+            </div>
+            <div className="p-6">
+              <p className="text-gray-300 mb-8">
+                {services[activeService].details.fullDescription}
+              </p>
+              
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h4 className="text-[#00ff00] font-bold mb-4">Key Features</h4>
+                  <ul className="space-y-2">
+                    {services[activeService].details.features.map((feature, index) => (
+                      <li key={index} className="flex items-center text-gray-300">
+                        <ChevronRight className="w-4 h-4 text-[#00ff00] mr-2" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div>
+                  <h4 className="text-[#00ff00] font-bold mb-4">Benefits</h4>
+                  <ul className="space-y-2">
+                    {services[activeService].details.benefits.map((benefit, index) => (
+                      <li key={index} className="flex items-center text-gray-300">
+                        <ChevronRight className="w-4 h-4 text-[#00ff00] mr-2" />
+                        {benefit}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div className="mt-8 flex justify-center">
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className="bg-[#00ff00] text-black px-6 py-3 rounded-full hover:bg-[#00cc00] transition-all"
+                >
+                  Request Service
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Vision Section */}
       <section id="vision" className="py-20 relative overflow-hidden">
