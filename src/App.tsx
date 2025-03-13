@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { AlignCenter as Alien, Brain, Shield, Code, ChevronRight, Sparkles, X } from 'lucide-react';
+import { AlignCenter as Alien, Brain, Shield, Code, ChevronRight, Sparkles, X, Sun, Moon } from 'lucide-react';
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeService, setActiveService] = useState<number | null>(null);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   const services = [
     {
@@ -77,16 +78,23 @@ function App() {
 
   useEffect(() => {
     setIsVisible(true);
-  }, []);
+    
+    // Update the document class based on dark mode state
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [isDarkMode]);
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-white dark:bg-black text-gray-900 dark:text-white transition-colors duration-300">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#00ff00]/20 to-[#003300]/30 z-0" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#00ff00]/10 to-[#003300]/20 dark:from-[#00ff00]/20 dark:to-[#003300]/30 z-0" />
         <div 
           className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80')] 
-          bg-cover bg-center opacity-20 z-[-1]"
+          bg-cover bg-center opacity-10 dark:opacity-20 z-[-1]"
         />
         
         {/* Floating UFOs */}
@@ -106,12 +114,23 @@ function App() {
               </div>
               <span className="text-xl font-bold tracking-wider">MIllI</span>
             </div>
-            <div className="hidden md:flex space-x-8">
+            <div className="hidden md:flex space-x-8 items-center">
               <a href="#services" className="hover:text-[#00ff00] transition-colors">Services</a>
               <a href="#vision" className="hover:text-[#00ff00] transition-colors">Vision</a>
+              <button 
+                onClick={() => setIsDarkMode(!isDarkMode)} 
+                className="p-2 rounded-full hover:bg-gray-800 dark:hover:bg-gray-700 transition-colors"
+                aria-label="Toggle dark mode"
+              >
+                {isDarkMode ? (
+                  <Sun className="w-5 h-5 text-[#00ff00]" />
+                ) : (
+                  <Moon className="w-5 h-5 text-[#00ff00]" />
+                )}
+              </button>
               <a href="tel:+263786838849" className="inline-flex items-center space-x-2 bg-[#00ff00] text-black px-4 py-2 rounded-full hover:bg-[#00cc00] transition-colors">
-          <span>Call Now</span>
-          <ChevronRight className="w-4 h-4" />
+                <span>Call Now</span>
+                <ChevronRight className="w-4 h-4" />
               </a>
             </div>
           </div>
@@ -142,7 +161,7 @@ function App() {
       </div>
 
       {/* Enhanced Services Section */}
-      <section id="services" className="py-20 bg-gradient-to-b from-black to-[#003300]/20">
+      <section id="services" className="py-20 bg-gradient-to-b from-white dark:from-black to-[#e6ffe6]/20 dark:to-[#003300]/20">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold mb-16 text-center">Classified Operations</h2>
           
@@ -150,7 +169,7 @@ function App() {
             {services.map((service, index) => (
               <div 
                 key={index}
-                className="group relative bg-gradient-to-br from-black to-[#001a00] p-8 rounded-xl hover:shadow-2xl hover:shadow-[#00ff00]/20 transition-all duration-300 border border-[#00ff00]/20"
+                className="group relative bg-gradient-to-br from-gray-50 to-[#e6ffe6] dark:from-black dark:to-[#001a00] p-8 rounded-xl hover:shadow-2xl hover:shadow-[#00ff00]/20 transition-all duration-300 border border-[#00ff00]/20"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-[#00ff00]/5 to-transparent opacity-0 group-hover:opacity-100 rounded-xl transition-opacity" />
                 <div className="relative">
@@ -174,8 +193,8 @@ function App() {
       {/* Service Modal */}
       {activeService !== null && (
         <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
-          <div className="bg-[#001a00] border border-[#00ff00]/20 rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-            <div className="sticky top-0 bg-[#001a00] p-6 border-b border-[#00ff00]/20">
+          <div className="bg-[#f0fff0] dark:bg-[#001a00] border border-[#00ff00]/20 rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="sticky top-0 bg-[#f0fff0] dark:bg-[#001a00] p-6 border-b border-[#00ff00]/20">
               <div className="flex items-center justify-between">
                 <h3 className="text-2xl font-bold text-[#00ff00]">
                   {services[activeService].title}
@@ -234,7 +253,7 @@ function App() {
 
       {/* Vision Section */}
       <section id="vision" className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#003300]/20 to-black z-0" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#e6ffe6]/20 dark:from-[#003300]/20 to-white dark:to-black z-0" />
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="md:w-1/2 mb-10 md:mb-0">
@@ -289,7 +308,7 @@ function App() {
       )}
 
       {/* Footer */}
-      <footer className="bg-black border-t border-[#00ff00]/20 py-12">
+      <footer className="bg-white dark:bg-black border-t border-[#00ff00]/20 py-12">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-2 mb-6 md:mb-0">
