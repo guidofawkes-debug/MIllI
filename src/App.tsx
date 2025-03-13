@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { AlignCenter as Alien, Brain, Shield, Code, ChevronRight, Sparkles, X, Sun, Moon } from 'lucide-react';
+import { Auth } from './components/Auth';
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
@@ -284,25 +285,20 @@ function App() {
       {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
-          <div className="bg-white text-black p-8 rounded-lg max-w-md w-full">
-            <h2 className="text-2xl font-bold mb-4">Early Access Sign-Up</h2>
-            <form>
-              <div className="mb-4">
-                <label className="block text-sm font-medium mb-2" htmlFor="name">Name</label>
-                <input className="w-full px-3 py-2 border border-gray-300 rounded" type="text" id="name" name="name" required />
-              </div>
-              <div className="mb-4">
-                <label className="block text-sm font-medium mb-2" htmlFor="email">Email</label>
-                <input className="w-full px-3 py-2 border border-gray-300 rounded" type="email" id="email" name="email" required />
-              </div>
-              <button className="bg-[#00ff00] text-black px-4 py-2 rounded-full hover:bg-[#00cc00] transition-all" type="submit">Sign Up</button>
-            </form>
-            <button 
-              className="mt-4 text-gray-500 hover:text-gray-700 transition-all"
-              onClick={() => setIsModalOpen(false)}
-            >
-              Close
-            </button>
+          <div className="bg-white dark:bg-black dark:text-white text-black p-8 rounded-lg max-w-md w-full">
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-2xl font-bold">Join The Revolution</h2>
+              <button 
+                className="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-all"
+                onClick={() => setIsModalOpen(false)}
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+            
+            <div className="mb-6">
+              <Auth />
+            </div>
           </div>
         </div>
       )}
