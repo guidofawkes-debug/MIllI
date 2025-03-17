@@ -79,7 +79,7 @@ function App() {
 
   useEffect(() => {
     setIsVisible(true);
-    
+
     // Update the document class based on dark mode state
     if (isDarkMode) {
       document.documentElement.classList.add('dark');
@@ -97,7 +97,7 @@ function App() {
           className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80')] 
           bg-cover bg-center opacity-10 dark:opacity-20 z-[-1]"
         />
-        
+
         {/* Floating UFOs */}
         <div className="absolute top-20 right-[20%] w-16 h-16 animate-[float_6s_ease-in-out_infinite]">
           <div className="w-full h-full bg-gradient-to-b from-[#00ff00]/30 to-transparent rounded-full"></div>
@@ -105,7 +105,7 @@ function App() {
         <div className="absolute top-40 left-[15%] w-12 h-12 animate-[float_8s_ease-in-out_infinite]">
           <div className="w-full h-full bg-gradient-to-b from-[#00ff00]/20 to-transparent rounded-full"></div>
         </div>
-        
+
         <nav className="relative z-10 container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
@@ -149,7 +149,7 @@ function App() {
           Straight Outta Area 51
               </h1>
             </div>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl">
+            <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl">
               Advanced AI solutions beyond conventional boundaries.
               Welcome to the next evolution of technology.
             </p>
@@ -165,7 +165,7 @@ function App() {
       <section id="services" className="py-20 bg-gradient-to-b from-white dark:from-black to-[#e6ffe6]/20 dark:to-[#003300]/20">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold mb-16 text-center">Classified Operations</h2>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <div 
@@ -212,25 +212,25 @@ function App() {
               <p className="text-gray-300 mb-8">
                 {services[activeService].details.fullDescription}
               </p>
-              
+
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
                   <h4 className="text-[#00ff00] font-bold mb-4">Key Features</h4>
                   <ul className="space-y-2">
                     {services[activeService].details.features.map((feature, index) => (
-                      <li key={index} className="flex items-center text-gray-300">
+                      <li key={index} className="flex items-center text-gray-600 dark:text-gray-300">
                         <ChevronRight className="w-4 h-4 text-[#00ff00] mr-2" />
                         {feature}
                       </li>
                     ))}
                   </ul>
                 </div>
-                
+
                 <div>
                   <h4 className="text-[#00ff00] font-bold mb-4">Benefits</h4>
                   <ul className="space-y-2">
                     {services[activeService].details.benefits.map((benefit, index) => (
-                      <li key={index} className="flex items-center text-gray-300">
+                      <li key={index} className="flex items-center text-gray-600 dark:text-gray-300">
                         <ChevronRight className="w-4 h-4 text-[#00ff00] mr-2" />
                         {benefit}
                       </li>
@@ -260,7 +260,7 @@ function App() {
             <div className="md:w-1/2 mb-10 md:mb-0">
               <Sparkles className="w-12 h-12 text-[#00ff00] mb-6" />
               <h2 className="text-3xl font-bold mb-6">Beyond Human Limits</h2>
-              <p className="text-gray-300 mb-6">
+              <p className="text-gray-600 dark:text-gray-300 mb-6">
                 We're not just predicting the future - we're reverse engineering it. Our team of rogue scientists 
                 and digital alchemists are breaking the barriers between possible and impossible.
               </p>
@@ -295,7 +295,7 @@ function App() {
                 <X className="w-6 h-6" />
               </button>
             </div>
-            
+
             <div className="mb-6">
               <Auth />
             </div>
@@ -316,13 +316,13 @@ function App() {
             </div>
             <div className="flex space-x-6">
               <a href="https://twitter.com/yourprofile" className="text-gray-400 hover:text-[#00ff00] transition-colors">Twitter</a>
-              
+
               <a href="https://www.linkedin.com/in/millan-ashly-type" className="text-gray-390 hover:text-[#00ff00] transition-colors">LinkedIn</a>
-              
+
               <a href="https://github.com/Aly3n2077" className="text-gray-390 hover:text-[#00ff00] transition-colors">Instagram</a>
-              
+
                 <a href="https://www.facebook.com/yourprofile" className="text-gray-390 hover:text-[#00ff00] transition-colors">Facebook</a>
-              
+
             </div>
           </div>
           <div className="mt-8 text-center text-gray-600">
