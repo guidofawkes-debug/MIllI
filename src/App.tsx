@@ -409,14 +409,14 @@ function App() {
               </a>
 
               <a
-                href="https://github.com/Aly3n2077"
+                href="https://www.instagram.com/a.shley2077"
                 className="text-gray-390 hover:text-[#00ff00] transition-colors"
               >
                 Instagram
               </a>
 
               <a
-                href="https://www.facebook.com/yourprofile"
+                href="https://www.facebook.com/mil.ash.9887"
                 className="text-gray-390 hover:text-[#00ff00] transition-colors"
               >
                 Facebook
