@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { AlignCenter as Alien, Brain, Shield, Code, ChevronRight, Sparkles, X, Sun, Moon } from 'lucide-react';
+import { AlignCenter as Alien, Brain, Shield, Code, ChevronRight, Sparkles, X, Sun, Moon, Robot, Building2, MessageSquare } from 'lucide-react';
 import { Auth } from './components/Auth';
 
 function App() {
@@ -72,6 +72,28 @@ function App() {
           "Enhanced data privacy",
           "Compliance with emerging standards",
           "Advanced threat detection"
+        ]
+      }
+    },
+    {
+      icon: <Robot className="w-8 h-8 text-[#00ff00]" />,
+      title: "Agentive AI & Automation",
+      description: "Autonomous agents, workflow automation, and chatbot integration.",
+      details: {
+        fullDescription: "We build and integrate autonomous agents, automate workflows, and develop custom chatbots to streamline your business processes and enhance efficiency.",
+        features: [
+          "Autonomous Agent Development",
+          "Workflow Automation",
+          "Natural Language to SQL",
+          "Complex Data Pipelines",
+          "Self-Adaptive Systems"
+        ],
+        benefits: [
+          "Increased efficiency and productivity",
+          "Reduced operational costs",
+          "Improved data management",
+          "Enhanced decision-making",
+          "Scalable and adaptable solutions"
         ]
       }
     }
