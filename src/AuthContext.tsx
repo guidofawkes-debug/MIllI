@@ -6,8 +6,8 @@ import {
   signOut as firebaseSignOut,
   onAuthStateChanged
 } from 'firebase/auth';
-import { auth, provider } from './firebase';
-import { doc, setDoc, getFirestore } from 'firebase/firestore';
+import { auth, provider, db } from './firebase';
+import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
 
 interface AuthContextType {
   currentUser: User | null;
@@ -29,7 +29,6 @@ export const useAuth = () => {
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
-  const db = getFirestore();
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -45,17 +44,19 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
       
-      // Store user data in Firestore
+      // Store user data in Firestore with serverTimestamp
       await setDoc(doc(db, "users", user.uid), {
         uid: user.uid,
         email: user.email,
         displayName: user.displayName,
         photoURL: user.photoURL,
-        lastLogin: new Date()
+        lastLogin: serverTimestamp(),
+        createdAt: serverTimestamp()
       }, { merge: true });
       
     } catch (error) {
       console.error("Error signing in with Google:", error);
+      throw error;
     }
   };
 
@@ -64,6 +65,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       await firebaseSignOut(auth);
     } catch (error) {
       console.error("Error signing out:", error);
+      throw error;
     }
   };
 
