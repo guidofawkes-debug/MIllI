@@ -139,12 +139,18 @@ function App() {
           bg-cover bg-center opacity-10 dark:opacity-20 z-[-1]"
         />
 
-        {/* Floating UFOs */}
-        <div className="absolute top-20 right-[20%] w-16 h-16 animate-[float_6s_ease-in-out_infinite]">
-          <div className="w-full h-full bg-gradient-to-b from-[#00ff00]/30 to-transparent rounded-full"></div>
+        {/* Floating Logos */}
+        <div className="absolute top-20 right-[20%] w-24 h-24 animate-[float_6s_ease-in-out_infinite]">
+          <img src="/logo-green.png" alt="Logo" className="w-full h-full object-contain opacity-80" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#00ff00]/30 to-transparent rounded-full mix-blend-overlay"></div>
         </div>
-        <div className="absolute top-40 left-[15%] w-12 h-12 animate-[float_8s_ease-in-out_infinite]">
-          <div className="w-full h-full bg-gradient-to-b from-[#00ff00]/20 to-transparent rounded-full"></div>
+        <div className="absolute top-40 left-[15%] w-20 h-20 animate-[float_8s_ease-in-out_infinite]">
+          <img src="/logo-white.png" alt="Logo" className="w-full h-full object-contain opacity-60" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#00ff00]/20 to-transparent rounded-full mix-blend-overlay"></div>
+        </div>
+        <div className="absolute bottom-32 right-[30%] w-16 h-16 animate-[float_7s_ease-in-out_infinite]">
+          <img src="/logo-variant.png" alt="Logo Variant" className="w-full h-full object-contain opacity-70" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#00ff00]/25 to-transparent rounded-full mix-blend-overlay"></div>
         </div>
 
         <nav className="relative z-10 container mx-auto px-6 py-4">
