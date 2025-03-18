@@ -4,6 +4,10 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      fontFamily: {
+        'exo': ['Exo 2', 'sans-serif'],
+        'orbitron': ['Orbitron', 'sans-serif'],
+      },
       keyframes: {
         float: {
           '0%, 100%': { transform: 'translateY(0)' },
