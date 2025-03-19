@@ -141,15 +141,15 @@ function App() {
 
         {/* Floating Logos */}
         <div className="absolute top-20 right-[20%] w-24 h-24 animate-[float_6s_ease-in-out_infinite]">
-          <img src="/logo-variant-white.png" alt="Logo" className="w-full h-full object-contain opacity-70" />
+          <img src="/Logo-Variant-white.png" alt="Logo" className="w-full h-full object-contain opacity-70" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#00ff00]/30 to-transparent rounded-full mix-blend-overlay"></div>
         </div>
         <div className="absolute top-40 left-[15%] w-20 h-20 animate-[float_8s_ease-in-out_infinite]">
-          <img src="/logo-black.png" alt="Logo" className="w-full h-full object-contain opacity-60 dark:invert" />
+          <img src="/Logo-black.png" alt="Logo" className="w-full h-full object-contain opacity-60 dark:invert" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#00ff00]/20 to-transparent rounded-full mix-blend-overlay"></div>
         </div>
         <div className="absolute bottom-32 right-[30%] w-16 h-16 animate-[float_7s_ease-in-out_infinite]">
-          <img src="/logo-variant.png" alt="Logo Variant" className="w-full h-full object-contain opacity-50" />
+          <img src="/Logo-Variant.png" alt="Logo Variant" className="w-full h-full object-contain opacity-50" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#00ff00]/25 to-transparent rounded-full mix-blend-overlay"></div>
         </div>
 
