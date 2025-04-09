@@ -9,7 +9,7 @@ import {
   X,
   Sun,
   Moon,
-  Robot,
+  Bot,
   Building2,
   MessageSquare,
 } from "lucide-react";
@@ -93,7 +93,7 @@ function App() {
       },
     },
     {
-      icon: <Robot className="w-8 h-8 text-[#00ff00]" />,
+      icon: <Bot className="w-8 h-8 text-[#00ff00]" />,
       title: "Agentive AI & Automation",
       description:
         "Autonomous agents, workflow automation, and chatbot integration.",
@@ -156,9 +156,12 @@ function App() {
         <nav className="relative z-10 container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <div className="relative w-10 h-10 bg-black rounded-full flex items-center justify-center">
-                <Alien className="w-8 h-8 text-[#00ff00]" />
-                <div className="absolute inset-0 border-2 border-[#00ff00] rounded-full animate-pulse"></div>
+              <div className="relative w-10 h-10">
+                <img 
+                  src="/GlaCK0N Transparent symbol.png"
+                  alt="Logo"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <span className="text-xl font-bold tracking-wider">MIllI</span>
             </div>
@@ -401,7 +404,7 @@ function App() {
             </div>
             <div className="flex space-x-6">
               <a
-                href="https://twitter.com/yourprofile"
+                href="https://x.com/Aly3nAsh"
                 className="text-gray-400 hover:text-[#00ff00] transition-colors"
               >
                 Twitter
