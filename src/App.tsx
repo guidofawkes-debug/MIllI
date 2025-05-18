@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import {
-  AlignCenter as Alien,
   Brain,
   Shield,
   Code,
@@ -10,8 +9,6 @@ import {
   Sun,
   Moon,
   Bot,
-  Building2,
-  MessageSquare,
 } from "lucide-react";
 import { Auth } from "./components/Auth";
 
@@ -121,7 +118,6 @@ function App() {
   useEffect(() => {
     setIsVisible(true);
 
-    // Update the document class based on dark mode state
     if (isDarkMode) {
       document.documentElement.classList.add("dark");
     } else {
@@ -139,30 +135,14 @@ function App() {
           bg-cover bg-center opacity-10 dark:opacity-20 z-[-1]"
         />
 
-        {/* Floating Logos */}
-        <div className="absolute top-20 right-[20%] w-24 h-24 animate-[float_6s_ease-in-out_infinite]">
-          <img src="/Logo-Variant-white.png" alt="Logo" className="w-full h-full object-contain opacity-70" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#00ff00]/30 to-transparent rounded-full mix-blend-overlay"></div>
-        </div>
-        <div className="absolute top-40 left-[15%] w-20 h-20 animate-[float_8s_ease-in-out_infinite]">
-          <img src="/Logo-black.png" alt="Logo" className="w-full h-full object-contain opacity-60 dark:invert" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#00ff00]/20 to-transparent rounded-full mix-blend-overlay"></div>
-        </div>
-        <div className="absolute bottom-32 right-[30%] w-16 h-16 animate-[float_7s_ease-in-out_infinite]">
-          <img src="/Logo-Variant.png" alt="Logo Variant" className="w-full h-full object-contain opacity-50" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#00ff00]/25 to-transparent rounded-full mix-blend-overlay"></div>
-        </div>
-
         <nav className="relative z-10 container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <div className="relative w-10 h-10">
-                <img 
-                  src="/GlaCK0N Transparent symbol.png"
-                  alt="Logo"
-                  className="w-full h-full object-contain"
-                />
-              </div>
+            <div className="flex items-center space-x-4">
+              <img 
+                src="/GlaCK0N Transparent symbol.png"
+                alt="MIllI Logo"
+                className="w-12 h-12 object-contain"
+              />
               <span className="text-xl font-bold tracking-wider">MIllI</span>
             </div>
             <div className="hidden md:flex space-x-8 items-center">
@@ -202,25 +182,20 @@ function App() {
 
         <div className="relative container mx-auto px-6 py-24 md:py-32">
           <div
-            className={`transition-all duration-1000 transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+            className={`transition-all duration-1000 transform ${
+              isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+            }`}
           >
-            <div className="flex items-center mb-8">
-              <div className="relative w-20 h-20 mr-6">
-                <div className="absolute inset-0 bg-black rounded-full"></div>
-                <Alien className="relative z-10 w-20 h-20 text-[#00ff00]" />
-                <div className="absolute inset-0 border-2 border-[#00ff00] rounded-full animate-ping"></div>
-              </div>
-              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-[#00ff00] to-[#00cc00] bg-clip-text text-transparent">
-                Straight Outta Area 51
-              </h1>
-            </div>
+            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-[#00ff00] to-[#00cc00] bg-clip-text text-transparent mb-8">
+              Straight Outta Area 51
+            </h1>
             <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl">
               Advanced AI solutions beyond conventional boundaries. Welcome to
               the next evolution of technology.
             </p>
             <a
               href="tel:+263786838849"
-              className="group flex items-center space-x-2 bg-[#00ff00] hover:bg-[#00cc00] text-black font-bold px-8 py-3 rounded-full transition-all"
+              className="group flex items-center space-x-2 bg-[#00ff00] hover:bg-[#00cc00] text-black font-bold px-8 py-3 rounded-full transition-all w-fit"
             >
               <span>Call Us Now</span>
               <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -395,11 +370,12 @@ function App() {
       <footer className="bg-white dark:bg-black border-t border-[#00ff00]/20 py-12">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center space-x-2 mb-6 md:mb-0">
-              <div className="relative w-8 h-8 bg-black rounded-full flex items-center justify-center">
-                <Alien className="w-6 h-6 text-[#00ff00]" />
-                <div className="absolute inset-0 border-2 border-[#00ff00] rounded-full"></div>
-              </div>
+            <div className="flex items-center space-x-4">
+              <img 
+                src="/GlaCK0N Transparent symbol.png"
+                alt="MIllI Logo"
+                className="w-12 h-12 object-contain"
+              />
               <span className="text-lg font-bold">MIllI</span>
             </div>
             <div className="flex space-x-6">
@@ -409,24 +385,21 @@ function App() {
               >
                 Twitter
               </a>
-
               <a
                 href="https://www.linkedin.com/in/millan-ashly-type"
-                className="text-gray-390 hover:text-[#00ff00] transition-colors"
+                className="text-gray-400 hover:text-[#00ff00] transition-colors"
               >
                 LinkedIn
               </a>
-
               <a
                 href="https://www.instagram.com/a.shley2077"
-                className="text-gray-390 hover:text-[#00ff00] transition-colors"
+                className="text-gray-400 hover:text-[#00ff00] transition-colors"
               >
                 Instagram
               </a>
-
               <a
                 href="https://www.facebook.com/mil.ash.9887"
-                className="text-gray-390 hover:text-[#00ff00] transition-colors"
+                className="text-gray-400 hover:text-[#00ff00] transition-colors"
               >
                 Facebook
               </a>
