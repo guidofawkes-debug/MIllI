@@ -44,7 +44,7 @@ function App() {
       },
     },
     {
-      icon: <Code className="w-8 h-8 text-[#00ff00]" />,
+      icon: <Code2 className="w-8 h-8 text-[#00ff00] group-hover:animate-pulse-scale" />,
       title: "Systems Architecture",
       description: "Infrastructure from the future, built for the present",
       details: {
