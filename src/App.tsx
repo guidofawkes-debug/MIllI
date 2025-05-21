@@ -9,6 +9,11 @@ import {
   Sun,
   Moon,
   Bot,
+  Twitter,
+  Linkedin,
+  Instagram,
+  Facebook,
+  MessageCircle,
 } from "lucide-react";
 import { Auth } from "./components/Auth";
 
@@ -17,6 +22,7 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeService, setActiveService] = useState<number | null>(null);
   const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const services = [
     {
@@ -127,6 +133,17 @@ function App() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-black text-gray-900 dark:text-white transition-colors duration-300">
+      {/* WhatsApp Bubble */}
+      <a
+        href="https://wa.me/263715338621"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 bg-[#25D366] p-4 rounded-full shadow-lg hover:bg-[#128C7E] transition-colors z-50"
+        aria-label="Chat on WhatsApp"
+      >
+        <MessageCircle className="w-6 h-6 text-white" />
+      </a>
+
       {/* Hero Section */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-[#00ff00]/10 to-[#003300]/20 dark:from-[#00ff00]/20 dark:to-[#003300]/30 z-0" />
@@ -169,6 +186,21 @@ function App() {
                   <Moon className="w-5 h-5 text-[#00ff00]" />
                 )}
               </button>
+              <div className="relative">
+                <button
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                  className="hover:text-[#00ff00] transition-colors"
+                >
+                  More
+                </button>
+                {isMenuOpen && (
+                  <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-black border border-[#00ff00]/20 rounded-lg shadow-lg py-2">
+                    <a href="#" className="block px-4 py-2 hover:bg-[#00ff00]/10 transition-colors">Dashboard</a>
+                    <a href="#" className="block px-4 py-2 hover:bg-[#00ff00]/10 transition-colors">Book a Demo</a>
+                    <a href="#" className="block px-4 py-2 hover:bg-[#00ff00]/10 transition-colors">API Access</a>
+                  </div>
+                )}
+              </div>
               <a
                 href="tel:+263786838849"
                 className="inline-flex items-center space-x-2 bg-[#00ff00] text-black px-4 py-2 rounded-full hover:bg-[#00cc00] transition-colors"
@@ -382,26 +414,34 @@ function App() {
               <a
                 href="https://x.com/Aly3nAsh"
                 className="text-gray-400 hover:text-[#00ff00] transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Twitter
+                <Twitter className="w-5 h-5" />
               </a>
               <a
                 href="https://www.linkedin.com/in/millan-ashly-type"
                 className="text-gray-400 hover:text-[#00ff00] transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                LinkedIn
+                <Linkedin className="w-5 h-5" />
               </a>
               <a
                 href="https://www.instagram.com/a.shley2077"
                 className="text-gray-400 hover:text-[#00ff00] transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Instagram
+                <Instagram className="w-5 h-5" />
               </a>
               <a
                 href="https://www.facebook.com/mil.ash.9887"
                 className="text-gray-400 hover:text-[#00ff00] transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Facebook
+                <Facebook className="w-5 h-5" />
               </a>
             </div>
           </div>
