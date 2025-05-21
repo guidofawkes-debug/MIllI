@@ -350,6 +350,59 @@ function App() {
         </div>
       )}
 
+{/* Vision Section */}
+      <section id="vision" className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#e6ffe6]/20 dark:from-[#003300]/20 to-white dark:to-black z-0" />
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <div className="md:w-1/2 mb-10 md:mb-0">
+              <Sparkles className="w-12 h-12 text-[#00ff00] mb-6" />
+              <h2 className="text-3xl font-bold mb-6">Beyond Human Limits</h2>
+              <p className="text-gray-600 dark:text-gray-300 mb-6">
+                We're not just predicting the future - we're reverse engineering
+                it. Our team of rogue scientists and digital alchemists are
+                breaking the barriers between possible and impossible.
+              </p>
+              <button
+                className="bg-transparent border-2 border-[#00ff00] text-[#00ff00] px-6 py-2 rounded-full hover:bg-[#00ff00] hover:text-black transition-all"
+                onClick={() => setIsModalOpen(true)}
+              >
+                Join The Revolution - Sign Up for Early Access
+              </button>
+            </div>
+            <div className="md:w-1/2 flex justify-center">
+              <div className="relative w-72 h-72">
+                <div className="absolute inset-0 bg-gradient-to-r from-[#00ff00] to-[#003300] rounded-full animate-pulse opacity-20" />
+                <div className="absolute inset-4 bg-gradient-to-r from-[#00ff00] to-[#003300] rounded-full animate-pulse opacity-40" />
+                <div className="absolute inset-8 bg-gradient-to-r from-[#00ff00] to-[#003300] rounded-full animate-pulse opacity-60" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+          <div className="bg-white dark:bg-black dark:text-white text-black p-8 rounded-lg max-w-md w-full">
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-2xl font-bold">Join The Revolution</h2>
+              <button
+                className="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-all"
+                onClick={() => setIsModalOpen(false)}
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+
+            <div className="mb-6">
+              <Auth />
+            </div>
+          </div>
+        </div>
+      )}
+
+      
       {/* Footer */}
       <footer className="bg-white/5 dark:bg-black/5 border-t border-[#00ff00]/20 mt-20">
         <div className="container mx-auto px-6 py-12">
