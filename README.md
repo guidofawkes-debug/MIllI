@@ -1,38 +1,149 @@
+
 # MIllI - AI Beyond Human Limits
 
-## Project Overview
+## Project Overview & Roadmap
 
-MIllI is a cutting-edge AI technology platform built with React, TypeScript, and Firebase, designed to deliver advanced AI solutions beyond conventional boundaries. The project implements a modern, cyberpunk-inspired design with a focus on performance and user experience.
+MIllI is evolving into a comprehensive AI technology platform with advanced features and modular components. This document outlines our current capabilities and planned expansions.
+
+### Core Products
+
+1. **AI Agentic MVP Builder**
+   - Prompt Designer
+   - Input Connector (JSON, Google Sheets)
+   - Response Renderer (chat/PDF/table)
+   - One-click deployment
+
+2. **Self-Service Booking System**
+   - Calendar UI with FullCalendar
+   - Firebase/Firestore backend
+   - Stripe/PayPal integration
+   - Automated notifications
+
+3. **CRM Dashboard**
+   - Lead management
+   - Deal tracking (Kanban)
+   - Task/Note system
+   - Contact segmentation
+
+4. **WhatsApp Automation Layer**
+   - Template message handling
+   - Meta-verified API integration
+   - Zapier compatibility
+   - Consent management
+
+5. **AI Web Dev Agent**
+   - Browser-based editor
+   - Code suggestions
+   - Template library
+   - Instant deployment
+
+### Pricing Tiers
+
+#### Ignite (Starter) - $99/month
+- 1 Agentive Workflow
+- 2GB Cloud Storage
+- Basic Dashboard
+- Community Support
+- Limited API Calls
+
+#### Evolve (Pro) - $499/month
+- AI Model Design Lite
+- 5 Agentive Workflows
+- CRM & Booking Portal
+- Payment Integration
+- Priority Support
+
+#### Ascend (Enterprise) - Custom
+- Custom AI Architecture
+- End-to-End Systems
+- Advanced Security
+- Unlimited Workflows
+- 24/7 Support & SLA
 
 ### Tech Stack
+
 - **Frontend**: React 18, TypeScript, Tailwind CSS
+- **State Management**: React Context API
 - **Authentication**: Firebase Auth
 - **Database**: Firebase Firestore
-- **State Management**: React Context API
-- **Animations**: Framer Motion
-- **PWA Support**: Workbox
-- **Icons**: Lucide React
+- **APIs & Integration**:
+  - Stripe/PayPal for payments
+  - Twilio for WhatsApp
+  - SendGrid for emails
+  - Firebase Cloud Functions
 
-### Project Structure
-```
-├── src/
-│   ├── components/         # Reusable UI components
-│   ├── contexts/          # React Context providers
-│   ├── firebase/          # Firebase configuration
-│   ├── styles/           # Global styles and Tailwind config
-│   └── types/            # TypeScript type definitions
-├── public/               # Static assets
-└── vite.config.ts       # Vite configuration
-```
+### Implementation Phases
 
-## Installation & Setup
+#### Phase 1: Core Infrastructure
+- Setup Firebase/Firestore architecture
+- Implement authentication system
+- Deploy base UI components
+- Configure monitoring & analytics
 
-### Prerequisites
-- Node.js 18+
-- npm or yarn
-- Firebase account
+#### Phase 2: Booking System
+1. Calendar UI implementation
+2. Backend service integration
+3. Payment gateway setup
+4. Notification system
 
-### Installation Steps
+#### Phase 3: CRM Integration
+1. Dashboard development
+2. Lead capture forms
+3. Kanban board implementation
+4. Communication logging
+
+#### Phase 4: WhatsApp Integration
+1. Business API setup
+2. Template message system
+3. Webhook handlers
+4. Opt-in/out management
+
+#### Phase 5: AI Dev Agent
+1. Browser IDE integration
+2. Code suggestion system
+3. Template library
+4. Deployment automation
+
+### Scalability Considerations
+
+- Mobile-first responsive design
+- CDN integration
+- Multi-region database config
+- Horizontal scaling support
+- Caching implementation
+- API retry mechanisms
+- Async job queues
+
+### Security Measures
+
+- Zero-trust architecture
+- AI-powered threat detection
+- Cloud security posture management
+- Regular security audits
+- Compliance monitoring (GDPR, CCPA)
+
+### Development Guidelines
+
+1. **Code Style**
+   - TypeScript for type safety
+   - Component-based architecture
+   - Mobile-first approach
+   - PWA support
+
+2. **Performance**
+   - Code splitting
+   - Image optimization
+   - Service workers
+   - State management efficiency
+
+3. **Security**
+   - Environment variable protection
+   - Firebase Security Rules
+   - Input validation
+   - XSS prevention
+
+### Getting Started
+
 1. Clone the repository
 ```bash
 git clone <repository-url>
@@ -44,8 +155,7 @@ cd milli
 npm install
 ```
 
-3. Configure environment variables
-Create a `.env` file with your Firebase configuration:
+3. Configure environment variables (.env)
 ```env
 VITE_FIREBASE_API_KEY=your_api_key
 VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
@@ -55,130 +165,22 @@ VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
 VITE_FIREBASE_APP_ID=your_app_id
 ```
 
-4. Start development server
+4. Start development
 ```bash
 npm run dev
 ```
 
-## Authentication Flow
+### Contributing
 
-### Implementation
-The authentication system uses Firebase Authentication with Google sign-in provider. The flow is managed through the `AuthContext` which provides:
+1. Fork the repository
+2. Create feature branch
+3. Commit changes
+4. Push to branch
+5. Create Pull Request
 
-- User state management
-- Sign in/out functionality
-- Protected route handling
-- Automatic user data synchronization with Firestore
+### Support
 
-### Authentication State Management
-```typescript
-interface AuthContextType {
-  currentUser: User | null;
-  signInWithGoogle: () => Promise<void>;
-  signOut: () => Promise<void>;
-  loading: boolean;
-}
-```
-
-### Protected Routes
-Routes requiring authentication are wrapped with the `AuthProvider` component:
-```typescript
-<AuthProvider>
-  <ProtectedRoute>
-    <Component />
-  </ProtectedRoute>
-</AuthProvider>
-```
-
-## Component Documentation
-
-### Key Components
-
-#### Auth Component
-Handles user authentication UI and logic.
-
-Props: None
-
-Usage:
-```typescript
-<Auth />
-```
-
-#### Pricing Component
-Displays service pricing tiers with interactive features.
-
-Props: None
-
-Usage:
-```typescript
-<Pricing />
-```
-
-#### UserProfile Component
-Displays user information and settings.
-
-Props: None
-
-Usage:
-```typescript
-<UserProfile />
-```
-
-## State Management
-
-The application uses React Context API for state management through multiple contexts:
-
-### AuthContext
-Manages authentication state and user data.
-
-### ThemeContext
-Handles theme preferences and customization.
-
-## Testing
-
-The project uses Vitest for unit testing.
-
-### Running Tests
-```bash
-npm run test
-```
-
-### Test Coverage
-```bash
-npm run test:coverage
-```
-
-## Deployment
-
-The application is configured for deployment to Firebase Hosting.
-
-### Deployment Steps
-1. Build the application:
-```bash
-npm run build
-```
-
-2. Deploy to Firebase:
-```bash
-npm run deploy
-```
-
-## Best Practices
-
-### Code Style
-- Consistent use of TypeScript for type safety
-- Component-based architecture
-- Responsive design with Tailwind CSS
-- Progressive enhancement with PWA support
-
-### Performance Optimization
-- Code splitting with React.lazy()
-- Image optimization
-- Service Worker for offline support
-- Efficient state management
-
-### Security
-- Environment variable protection
-- Firebase Security Rules
-- Protected routes implementation
-- Input validation and sanitization
+For support and inquiries:
+- Community Support (Ignite Tier)
+- Priority Email Support (Evolve Tier)
+- 24/7 Dedicated Support (Ascend Tier)
