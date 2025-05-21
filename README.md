@@ -1,84 +1,184 @@
-# MIllI
+# MIllI - AI Beyond Human Limits
 
-MIllI is a cutting-edge project developed in **TypeScript**, **JavaScript**, and **HTML**, designed to deliver innovative solutions with a focus on scalability, efficiency, and modern architecture.
+## Project Overview
 
-## 🚀 Features
+MIllI is a cutting-edge AI technology platform built with React, TypeScript, and Firebase, designed to deliver advanced AI solutions beyond conventional boundaries. The project implements a modern, cyberpunk-inspired design with a focus on performance and user experience.
 
-- **TypeScript-Powered Core**: Ensuring robust, type-safe, and scalable code.
-- **Lightweight JavaScript Utilities**: Optimized for performance.
-- **Responsive HTML Design**: Built with accessibility and user experience in mind.
-- **Modular and Extensible Architecture**: Easily adaptable for future integrations and enhancements.
+### Tech Stack
+- **Frontend**: React 18, TypeScript, Tailwind CSS
+- **Authentication**: Firebase Auth
+- **Database**: Firebase Firestore
+- **State Management**: React Context API
+- **Animations**: Framer Motion
+- **PWA Support**: Workbox
+- **Icons**: Lucide React
 
-## 📂 Project Structure
-
-```plaintext
-├── src/                  # Core TypeScript and JavaScript source code
-├── public/               # Static HTML and assets
-├── tests/                # Automated test cases
-├── docs/                 # Additional documentation
-└── README.md             # Project overview (you're here!)
+### Project Structure
+```
+├── src/
+│   ├── components/         # Reusable UI components
+│   ├── contexts/          # React Context providers
+│   ├── firebase/          # Firebase configuration
+│   ├── styles/           # Global styles and Tailwind config
+│   └── types/            # TypeScript type definitions
+├── public/               # Static assets
+└── vite.config.ts       # Vite configuration
 ```
 
-## 🛠️ Technologies Used
+## Installation & Setup
 
-- **TypeScript**: 88.2%
-- **JavaScript**: 7.6%
-- **HTML**: 3%
-- **Other**: 1.2%
+### Prerequisites
+- Node.js 18+
+- npm or yarn
+- Firebase account
 
-## 🔧 Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Aly3n2077/MIllI.git
-   cd MIllI
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Build the project:
-   ```bash
-   npm run build
-   ```
-
-4. Start the application:
-   ```bash
-   npm start
-   ```
-
-## 🧪 Running Tests
-
-To run tests, execute:
+### Installation Steps
+1. Clone the repository
 ```bash
-npm test
+git clone <repository-url>
+cd milli
 ```
 
-## 📖 Documentation
+2. Install dependencies
+```bash
+npm install
+```
 
-Detailed documentation can be found in the `docs/` directory. For API references, usage guides, and examples, ensure to explore this directory.
+3. Configure environment variables
+Create a `.env` file with your Firebase configuration:
+```env
+VITE_FIREBASE_API_KEY=your_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
+```
 
-## 🤝 Contribution Guidelines
+4. Start development server
+```bash
+npm run dev
+```
 
-We welcome contributions from the community! To contribute:
+## Authentication Flow
 
-1. Fork the repository.
-2. Create a new feature branch:
-   ```bash
-   git checkout -b feature-name
-   ```
-3. Commit your changes:
-   ```bash
-   git commit -m "Add new feature"
-   ```
-4. Push your branch:
-   ```bash
-   git push origin feature-name
-   ```
-5. Submit a pull request.
+### Implementation
+The authentication system uses Firebase Authentication with Google sign-in provider. The flow is managed through the `AuthContext` which provides:
 
-## 📜 License
+- User state management
+- Sign in/out functionality
+- Protected route handling
+- Automatic user data synchronization with Firestore
 
-This project is licensed under the [MIT License](LICENSE).
+### Authentication State Management
+```typescript
+interface AuthContextType {
+  currentUser: User | null;
+  signInWithGoogle: () => Promise<void>;
+  signOut: () => Promise<void>;
+  loading: boolean;
+}
+```
+
+### Protected Routes
+Routes requiring authentication are wrapped with the `AuthProvider` component:
+```typescript
+<AuthProvider>
+  <ProtectedRoute>
+    <Component />
+  </ProtectedRoute>
+</AuthProvider>
+```
+
+## Component Documentation
+
+### Key Components
+
+#### Auth Component
+Handles user authentication UI and logic.
+
+Props: None
+
+Usage:
+```typescript
+<Auth />
+```
+
+#### Pricing Component
+Displays service pricing tiers with interactive features.
+
+Props: None
+
+Usage:
+```typescript
+<Pricing />
+```
+
+#### UserProfile Component
+Displays user information and settings.
+
+Props: None
+
+Usage:
+```typescript
+<UserProfile />
+```
+
+## State Management
+
+The application uses React Context API for state management through multiple contexts:
+
+### AuthContext
+Manages authentication state and user data.
+
+### ThemeContext
+Handles theme preferences and customization.
+
+## Testing
+
+The project uses Vitest for unit testing.
+
+### Running Tests
+```bash
+npm run test
+```
+
+### Test Coverage
+```bash
+npm run test:coverage
+```
+
+## Deployment
+
+The application is configured for deployment to Firebase Hosting.
+
+### Deployment Steps
+1. Build the application:
+```bash
+npm run build
+```
+
+2. Deploy to Firebase:
+```bash
+npm run deploy
+```
+
+## Best Practices
+
+### Code Style
+- Consistent use of TypeScript for type safety
+- Component-based architecture
+- Responsive design with Tailwind CSS
+- Progressive enhancement with PWA support
+
+### Performance Optimization
+- Code splitting with React.lazy()
+- Image optimization
+- Service Worker for offline support
+- Efficient state management
+
+### Security
+- Environment variable protection
+- Firebase Security Rules
+- Protected routes implementation
+- Input validation and sanitization
