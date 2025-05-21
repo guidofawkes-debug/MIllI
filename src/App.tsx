@@ -1,7 +1,3 @@
-The code modifications include adding routes for new pages and updating footer links in the React application.
-```
-
-```replit_final_file
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
