@@ -17,6 +17,8 @@ import {
 } from "lucide-react";
 import { Auth } from "./components/Auth";
 import { Pricing } from "./components/Pricing";
+import { Dashboard } from './components/Dashboard';
+import { useAuth } from "./context/AuthContext";
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
@@ -24,6 +26,8 @@ function App() {
   const [activeService, setActiveService] = useState<number | null>(null);
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showDashboard, setShowDashboard] = useState(false);
+  const { currentUser } = useAuth();
 
   const services = [
     {
@@ -132,6 +136,10 @@ function App() {
     }
   }, [isDarkMode]);
 
+  if (showDashboard && currentUser) {
+    return <Dashboard />;
+  }
+
   return (
     <div className="min-h-screen bg-white dark:bg-black text-gray-900 dark:text-white transition-colors duration-300">
       {/* WhatsApp Bubble */}
@@ -193,22 +201,41 @@ function App() {
                   <Moon className="w-5 h-5 text-[#00ff00]" />
                 )}
               </button>
-              <div className="relative">
+              {currentUser ? (
+                <div className="relative">
+                  <button
+                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    className="inline-flex items-center space-x-2 bg-[#00ff00] text-black px-4 py-2 rounded-full hover:bg-[#00cc00] transition-colors"
+                  >
+                    <span>Menu</span>
+                    <ChevronRight className="w-4 h-4" />
+                  </button>
+                  {isMenuOpen && (
+                    <div className="absolute right-0 mt-2 w-48 bg-white/10 dark:bg-black/10 backdrop-blur-md border border-[#00ff00]/20 rounded-lg shadow-lg py-2">
+                      <a 
+                        href="#" 
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setShowDashboard(true);
+                        }} 
+                        className="block px-4 py-2 hover:bg-[#00ff00]/10 transition-colors"
+                      >
+                        Dashboard
+                      </a>
+                      <a href="#" className="block px-4 py-2 hover:bg-[#00ff00]/10 transition-colors">Book a Demo</a>
+                      <a href="#" className="block px-4 py-2 hover:bg-[#00ff00]/10 transition-colors">API Access</a>
+                    </div>
+                  )}
+                </div>
+              ) : (
                 <button
-                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                  onClick={() => setIsModalOpen(true)}
                   className="inline-flex items-center space-x-2 bg-[#00ff00] text-black px-4 py-2 rounded-full hover:bg-[#00cc00] transition-colors"
                 >
-                  <span>Menu</span>
+                  <span>Sign In</span>
                   <ChevronRight className="w-4 h-4" />
                 </button>
-                {isMenuOpen && (
-                  <div className="absolute right-0 mt-2 w-48 bg-white/10 dark:bg-black/10 backdrop-blur-md border border-[#00ff00]/20 rounded-lg shadow-lg py-2">
-                    <a href="#" className="block px-4 py-2 hover:bg-[#00ff00]/10 transition-colors">Dashboard</a>
-                    <a href="#" className="block px-4 py-2 hover:bg-[#00ff00]/10 transition-colors">Book a Demo</a>
-                    <a href="#" className="block px-4 py-2 hover:bg-[#00ff00]/10 transition-colors">API Access</a>
-                  </div>
-                )}
-              </div>
+              )}
             </div>
           </div>
         </nav>
