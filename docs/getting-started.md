@@ -3,9 +3,8 @@
 
 ## Prerequisites
 - Node.js 18+
-- npm 8+
+- npm or yarn
 - Firebase account
-- Stripe account (for payments)
 
 ## Installation
 1. Clone the repository
@@ -13,13 +12,14 @@
 3. Configure environment variables
 4. Start development server: `npm run dev`
 
-## Environment Setup
-Create a `.env` file with the following variables:
-```env
-VITE_FIREBASE_API_KEY=your_api_key
-VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
-VITE_FIREBASE_PROJECT_ID=your_project_id
-VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
-VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
-VITE_FIREBASE_APP_ID=your_app_id
-```
+## Configuration
+1. Set up Firebase credentials
+2. Configure authentication
+3. Set up database rules
+4. Configure API keys
+
+## Development
+1. Component structure
+2. State management
+3. API integration
+4. Testing
