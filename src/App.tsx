@@ -458,4 +458,3 @@ function App() {
               </a>
             </div>
           </div>
-          <div className="mt-8 text-center text-gray-600">
