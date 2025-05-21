@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import {
   Brain,
   Shield,
-  Code,
+  Code2,
   ChevronRight,
   Sparkles,
   X,
