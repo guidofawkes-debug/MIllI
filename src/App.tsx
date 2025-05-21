@@ -17,6 +17,8 @@ import {
 } from "lucide-react";
 import { Auth } from "./components/Auth";
 import { Pricing } from "./components/Pricing";
+import { Dashboard } from './components/Dashboard';
+import { useAuth } from "./AuthContext";
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
@@ -24,6 +26,8 @@ function App() {
   const [activeService, setActiveService] = useState<number | null>(null);
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showDashboard, setShowDashboard] = useState(false);
+  const { currentUser } = useAuth();
 
   const services = [
     {
@@ -132,6 +136,10 @@ function App() {
     }
   }, [isDarkMode]);
 
+  if (showDashboard && currentUser) {
+    return <Dashboard />;
+  }
+
   return (
     <div className="min-h-screen bg-white dark:bg-black text-gray-900 dark:text-white transition-colors duration-300">
       {/* WhatsApp Bubble */}
@@ -193,29 +201,41 @@ function App() {
                   <Moon className="w-5 h-5 text-[#00ff00]" />
                 )}
               </button>
-              <div className="relative">
+              {currentUser ? (
+                <div className="relative">
+                  <button
+                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    className="inline-flex items-center space-x-2 bg-[#00ff00] text-black px-4 py-2 rounded-full hover:bg-[#00cc00] transition-colors"
+                  >
+                    <span>Menu</span>
+                    <ChevronRight className="w-4 h-4" />
+                  </button>
+                  {isMenuOpen && (
+                    <div className="absolute right-0 mt-2 w-48 bg-white/10 dark:bg-black/10 backdrop-blur-md border border-[#00ff00]/20 rounded-lg shadow-lg py-2">
+                      <a 
+                        href="#" 
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setShowDashboard(true);
+                        }} 
+                        className="block px-4 py-2 hover:bg-[#00ff00]/10 transition-colors"
+                      >
+                        Dashboard
+                      </a>
+                      <a href="#" className="block px-4 py-2 hover:bg-[#00ff00]/10 transition-colors">Book a Demo</a>
+                      <a href="#" className="block px-4 py-2 hover:bg-[#00ff00]/10 transition-colors">API Access</a>
+                    </div>
+                  )}
+                </div>
+              ) : (
                 <button
-                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                  onClick={() => setIsModalOpen(true)}
                   className="inline-flex items-center space-x-2 bg-[#00ff00] text-black px-4 py-2 rounded-full hover:bg-[#00cc00] transition-colors"
                 >
-                  <span>Menu</span>
+                  <span>Sign In</span>
                   <ChevronRight className="w-4 h-4" />
                 </button>
-                {isMenuOpen && (
-                  <div className="absolute right-0 mt-2 w-48 bg-white/10 dark:bg-black/10 backdrop-blur-md border border-[#00ff00]/20 rounded-lg shadow-lg py-2">
-                    <a href="#" className="block px-4 py-2 hover:bg-[#00ff00]/10 transition-colors">Dashboard</a>
-                    <a href="#" className="block px-4 py-2 hover:bg-[#00ff00]/10 transition-colors">Book a Demo</a>
-                    <a href="#" className="block px-4 py-2 hover:bg-[#00ff00]/10 transition-colors">API Access</a>
-                  </div>
-                )}
-              </div>
-              <a
-                href="tel:+263786838849"
-                
-              >
-                <span>Call Now</span>
-                <ChevronRight className="w-4 h-4" />
-              </a>
+              )}
             </div>
           </div>
         </nav>
@@ -323,6 +343,228 @@ function App() {
                           <ChevronRight className="w-4 h-4 text-[#00ff00] mr-2" />
                           {feature}
                         </li>
-                      ),
+                      )
                     )}
                   </ul>
+                </div>
+                <div>
+                  <h4 className="text-[#00ff00] font-bold mb-4">
+                    Benefits
+                  </h4>
+                  <ul className="space-y-2">
+                    {services[activeService].details.benefits.map(
+                      (benefit, index) => (
+                        <li
+                          key={index}
+                          className="flex items-center text-gray-600 dark:text-gray-300"
+                        >
+                          <ChevronRight className="w-4 h-4 text-[#00ff00] mr-2" />
+                          {benefit}
+                        </li>
+                      )
+                    )}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Vision Section */}
+      <section id="vision" className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#e6ffe6]/20 dark:from-[#003300]/20 to-white dark:to-black z-0" />
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <div className="md:w-1/2 mb-10 md:mb-0">
+              <Sparkles className="w-12 h-12 text-[#00ff00] mb-6" />
+              <h2 className="text-3xl font-bold mb-6">Beyond Human Limits</h2>
+              <p className="text-gray-600 dark:text-gray-300 mb-6">
+                We're not just predicting the future - we're reverse engineering
+                it. Our team of rogue scientists and digital alchemists are
+                breaking the barriers between possible and impossible.
+              </p>
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="w-full md:w-auto bg-[#00ff00] text-black font-bold px-8 py-3 rounded-full hover:bg-[#00cc00] transition-all duration-300 border-2 border-[#00ff00] hover:border-[#00cc00] shadow-lg hover:shadow-[#00ff00]/50"
+              >
+                Join The Revolution - Sign Up for Early Access
+              </button>
+            </div>
+            <div className="md:w-1/2 flex justify-center">
+              <div className="relative w-72 h-72">
+                <div className="absolute inset-0 bg-gradient-to-r from-[#00ff00] to-[#003300] rounded-full animate-pulse opacity-20" />
+                <div className="absolute inset-4 bg-gradient-to-r from-[#00ff00] to-[#003300] rounded-full animate-pulse opacity-40" />
+                <div className="absolute inset-8 bg-gradient-to-r from-[#00ff00] to-[#003300] rounded-full animate-pulse opacity-60" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+          <div className="bg-white dark:bg-black dark:text-white text-black p-8 rounded-lg max-w-md w-full">
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-2xl font-bold">Join The Revolution</h2>
+              <button
+                className="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-all"
+                onClick={() => setIsModalOpen(false)}
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+
+            <div className="mb-6">
+              <Auth />
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Footer */}
+      <footer className="bg-white/5 dark:bg-black/5 border-t border-[#00ff00]/20 mt-20">
+        <div className="container mx-auto px-6 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <div className="flex items-center space-x-2 mb-6">
+                <img 
+                  src="/GlaCK0N Transparent symbol.png"
+                  alt="MIllI Logo"
+                  className="w-8 h-8 object-contain"
+                />
+                <span className="font-bold text-xl">MIllI</span>
+              </div>
+              <p className="text-gray-400 mb-6">
+                Pushing the boundaries of AI technology beyond human limits.
+              </p>
+              <div className="flex space-x-4">
+                <a
+                href="https://x.com/Aly3nAsh"
+                className="text-gray-400 hover:text-[#00ff00] transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/millan-ashly-type"
+                className="text-gray-400 hover:text-[#00ff00] transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.instagram.com/a.shley2077"
+                className="text-gray-400 hover:text-[#00ff00] transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.facebook.com/mil.ash.9887"
+                className="text-gray-400 hover:text-[#00ff00] transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
+              </div>
+            </div>
+            
+            <div>
+              <h3 className="font-bold mb-6">Services</h3>
+              <ul className="space-y-4">
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-[#00ff00] transition-colors">
+                    AI Model Design
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-[#00ff00] transition-colors">
+                    Systems Architecture
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-[#00ff00] transition-colors">
+                    Advanced Cybersecurity
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-[#00ff00] transition-colors">
+                    Agentive AI & Automation
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="font-bold mb-6">Company</h3>
+              <ul className="space-y-4">
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-[#00ff00] transition-colors">
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-[#00ff00] transition-colors">
+                    Careers
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-[#00ff00] transition-colors">
+                    Blog
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-[#00ff00] transition-colors">
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="font-bold mb-6">Legal</h3>
+              <ul className="space-y-4">
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-[#00ff00] transition-colors">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-[#00ff00] transition-colors">
+                    Terms of Service
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-[#00ff00] transition-colors">
+                    Cookie Policy
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-[#00ff00] transition-colors">
+                    Security
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="border-t border-[#00ff00]/20 mt-12 pt-8 text-center text-gray-400">
+            <p>&copy; {new Date().getFullYear()} Milli Intelligent Technologies. Revolutionizing reality one
+            byte at a time.</p>
+            <div className="mt-8 text-center text-gray-600">
+           
+          </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
+export default App;
