@@ -571,10 +571,6 @@ function App() {
         </footer>
       </div>
       <Routes>
-        <Route path="/" element={<>
-          {/* Hero, Services, Vision sections stay on home route */}
-          {/* Modal and Footer stay on home route */}
-        </>} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<Terms />} />
