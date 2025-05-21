@@ -27,7 +27,7 @@ function App() {
 
   const services = [
     {
-      icon: <Brain className="w-8 h-8 text-[#00ff00]" />,
+      icon: <Brain className="w-8 h-8 text-[#00ff00]" />, 
       title: "AI Model Design",
       description:
         "Extraterrestrial intelligence solutions that evolve beyond human limitations",
@@ -163,22 +163,22 @@ function App() {
               />
               <span className="text-xl font-bold tracking-wider">MIllI</span>
             </div>
-            <div className="hidden md:flex space-x-10 items-center">
+            <div className="hidden md:flex space-x-8 items-center">
               <a
                 href="#services"
-                className="hover:text-[#00ff00] rounded-full dark:hover:bg-gray-700 transition-colors"
+                className="hover:text-[#00ff00] transition-colors"
               >
                 Services
               </a>
               <a
                 href="#pricing"
-                className="hover:text-[#00ff00] rounded-full dark:hover:bg-gray-700 transition-colors"
+                className="hover:text-[#00ff00] transition-colors"
               >
                 Pricing
               </a>
               <a
                 href="#vision"
-                className="hover:text-[#00ff00] rounded-full dark:hover:bg-gray-700 transition-colors"
+                className="hover:text-[#00ff00] transition-colors"
               >
                 Vision
               </a>
@@ -196,10 +196,10 @@ function App() {
               <div className="relative">
                 <button
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
-                  className="inline-flex items-center space-x-2 bg-[#00ff00] text-black px-4 py-2  transition-colors"
+                  className="flex items-center space-x-2 hover:text-[#00ff00] transition-colors"
                 >
                   <span>Menu</span>
-                  <ChevronRight className="w-5 h-5" />
+                  <ChevronRight className="w-4 h-4" />
                 </button>
                 {isMenuOpen && (
                   <div className="absolute right-0 mt-2 w-48 bg-white/10 dark:bg-black/10 backdrop-blur-md border border-[#00ff00]/20 rounded-lg shadow-lg py-2">
@@ -209,6 +209,13 @@ function App() {
                   </div>
                 )}
               </div>
+              <a
+                href="tel:+263786838849"
+                className="inline-flex items-center space-x-2 bg-[#00ff00] text-black px-4 py-2 rounded-full hover:bg-[#00cc00] transition-colors"
+              >
+                <span>Call Now</span>
+                <ChevronRight className="w-4 h-4" />
+              </a>
             </div>
           </div>
         </nav>
@@ -452,13 +459,3 @@ function App() {
             </div>
           </div>
           <div className="mt-8 text-center text-gray-600">
-            © 2025 Milli Intelligent Technologies. Revolutionizing reality one
-            byte at a time.
-          </div>
-        </div>
-      </footer>
-    </div>
-  );
-}
-
-export default App;
