@@ -187,26 +187,27 @@ function App() {
                   <Moon className="w-5 h-5 text-[#00ff00]" />
                 )}
               </button>
-              <div className="relative">
+              <div className="inline-flex items-center space-x-2 bg-[#00ff00] text-black px-4 py-2 rounded-full hover:bg-[#00cc00] transition-colors">
                 <button
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
                   className="hover:text-[#00ff00] transition-colors"
                 >
                   More
                 </button>
+                <ChevronRight className="w-4 h-4" />
                 {isMenuOpen && (
                   <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-black border border-[#00ff00]/20 rounded-lg shadow-lg py-2">
                     <a href="#" className="block px-4 py-2 hover:bg-[#00ff00]/10 transition-colors">Dashboard</a>
                     <a href="#" className="block px-4 py-2 hover:bg-[#00ff00]/10 transition-colors">Book a Demo</a>
                     <a href="#" className="block px-4 py-2 hover:bg-[#00ff00]/10 transition-colors">API Access</a>
                     <span>Menu</span>
-                <ChevronRight className="w-4 h-4" />
+                
                   </div>
                 )}
               </div>
               <a
                 href="tel:+263786838849"
-                className="inline-flex items-center space-x-2 bg-[#00ff00] text-black px-4 py-2 rounded-full hover:bg-[#00cc00] transition-colors"
+               
               >
                 
               </a>
