@@ -209,13 +209,6 @@ function App() {
                   </div>
                 )}
               </div>
-              <a
-                href="tel:+263786838849"
-                className="inline-flex items-center space-x-2 bg-[#00ff00] text-black px-4 py-2  transition-colors"
-              >
-                <span>Call Now</span>
-                
-              </a>
             </div>
           </div>
         </nav>
