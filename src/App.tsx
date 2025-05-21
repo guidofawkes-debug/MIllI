@@ -206,7 +206,7 @@ function App() {
                 href="tel:+263786838849"
                 className="inline-flex items-center space-x-2 bg-[#00ff00] text-black px-4 py-2 rounded-full hover:bg-[#00cc00] transition-colors"
               >
-                <span>Call Now</span>
+                <span>Menu</span>
                 <ChevronRight className="w-4 h-4" />
               </a>
             </div>
@@ -236,46 +236,6 @@ function App() {
           </div>
         </div>
       </div>
-
-      {/* Add Pricing Section */}
-      <Pricing />
-
-      {/* Enhanced Services Section */}
-      <section
-        id="services"
-        className="py-20 bg-gradient-to-b from-white dark:from-black to-[#e6ffe6]/20 dark:to-[#003300]/20"
-      >
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-16 text-center">
-            Classified Operations
-          </h2>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="group relative bg-gradient-to-br from-gray-50 to-[#e6ffe6] dark:from-black dark:to-[#001a00] p-8 rounded-xl hover:shadow-2xl hover:shadow-[#00ff00]/20 transition-all duration-300 border border-[#00ff00]/20"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-[#00ff00]/5 to-transparent opacity-0 group-hover:opacity-100 rounded-xl transition-opacity" />
-                <div className="relative">
-                  {service.icon}
-                  <h3 className="text-xl font-bold mt-4 mb-2">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-400">{service.description}</p>
-                  <button
-                    onClick={() => setActiveService(index)}
-                    className="mt-6 flex items-center text-[#00ff00] group-hover:text-[#00cc00]"
-                  >
-                    <span>Learn More</span>
-                    <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Service Modal */}
       {activeService !== null && (
@@ -349,6 +309,47 @@ function App() {
           </div>
         </div>
       )}
+
+       {/* Add Pricing Section */}
+      <Pricing />
+
+      {/* Enhanced Services Section */}
+      <section
+        id="services"
+        className="py-20 bg-gradient-to-b from-white dark:from-black to-[#e6ffe6]/20 dark:to-[#003300]/20"
+      >
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl font-bold mb-16 text-center">
+            Classified Operations
+          </h2>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className="group relative bg-gradient-to-br from-gray-50 to-[#e6ffe6] dark:from-black dark:to-[#001a00] p-8 rounded-xl hover:shadow-2xl hover:shadow-[#00ff00]/20 transition-all duration-300 border border-[#00ff00]/20"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-[#00ff00]/5 to-transparent opacity-0 group-hover:opacity-100 rounded-xl transition-opacity" />
+                <div className="relative">
+                  {service.icon}
+                  <h3 className="text-xl font-bold mt-4 mb-2">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-400">{service.description}</p>
+                  <button
+                    onClick={() => setActiveService(index)}
+                    className="mt-6 flex items-center text-[#00ff00] group-hover:text-[#00cc00]"
+                  >
+                    <span>Learn More</span>
+                    <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
 
       {/* Vision Section */}
       <section id="vision" className="py-20 relative overflow-hidden">
