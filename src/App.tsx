@@ -196,7 +196,7 @@ function App() {
               <div className="relative">
                 <button
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
-                  className="flex items-center space-x-2 hover:text-[#00ff00]  rounded-full transition-colors"
+                  className="flex items-center space-x-2 hover:text-[#00ff00] hover:bg-[#00cc00] rounded-full transition-colors"
                 >
                   <span>Menu</span>
                   <ChevronRight className="w-4 h-4" />
@@ -211,7 +211,7 @@ function App() {
               </div>
               <a
                 href="tel:+263786838849"
-                className="inline-flex items-center space-x-2 bg-[#00ff00] text-black px-4 py-2 hover:bg-[#00cc00] transition-colors"
+                className="inline-flex items-center space-x-2 bg-[#00ff00] text-black px-4 py-2  transition-colors"
               >
                 <span>Call Now</span>
                 
