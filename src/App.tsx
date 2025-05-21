@@ -349,6 +349,123 @@ function App() {
           </div>
         </div>
       )}
+
+      {/* Footer */}
+      <footer className="bg-white/5 dark:bg-black/5 border-t border-[#00ff00]/20 mt-20">
+        <div className="container mx-auto px-6 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <div className="flex items-center space-x-2 mb-6">
+                <img 
+                  src="/GlaCK0N Transparent symbol.png"
+                  alt="MIllI Logo"
+                  className="w-8 h-8 object-contain"
+                />
+                <span className="font-bold text-xl">MIllI</span>
+              </div>
+              <p className="text-gray-400 mb-6">
+                Pushing the boundaries of AI technology beyond human limits.
+              </p>
+              <div className="flex space-x-4">
+                <a href="#" className="text-gray-400 hover:text-[#00ff00] transition-colors">
+                  <Twitter className="w-5 h-5" />
+                </a>
+                <a href="#" className="text-gray-400 hover:text-[#00ff00] transition-colors">
+                  <Linkedin className="w-5 h-5" />
+                </a>
+                <a href="#" className="text-gray-400 hover:text-[#00ff00] transition-colors">
+                  <Instagram className="w-5 h-5" />
+                </a>
+                <a href="#" className="text-gray-400 hover:text-[#00ff00] transition-colors">
+                  <Facebook className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
+            
+            <div>
+              <h3 className="font-bold mb-6">Services</h3>
+              <ul className="space-y-4">
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-[#00ff00] transition-colors">
+                    AI Model Design
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-[#00ff00] transition-colors">
+                    Systems Architecture
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-[#00ff00] transition-colors">
+                    Advanced Cybersecurity
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-[#00ff00] transition-colors">
+                    Agentive AI & Automation
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="font-bold mb-6">Company</h3>
+              <ul className="space-y-4">
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-[#00ff00] transition-colors">
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-[#00ff00] transition-colors">
+                    Careers
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-[#00ff00] transition-colors">
+                    Blog
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-[#00ff00] transition-colors">
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="font-bold mb-6">Legal</h3>
+              <ul className="space-y-4">
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-[#00ff00] transition-colors">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-[#00ff00] transition-colors">
+                    Terms of Service
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-[#00ff00] transition-colors">
+                    Cookie Policy
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-[#00ff00] transition-colors">
+                    Security
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="border-t border-[#00ff00]/20 mt-12 pt-8 text-center text-gray-400">
+            <p>&copy; {new Date().getFullYear()} MIllI. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
