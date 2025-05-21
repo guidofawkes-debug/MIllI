@@ -529,7 +529,11 @@ function App() {
           </div>
 
           <div className="border-t border-[#00ff00]/20 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; {new Date().getFullYear()} MIllI. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} © 2025 Milli Intelligent Technologies. Revolutionizing reality one
+            byte at a time.</p>
+            <div className="mt-8 text-center text-gray-600">
+           
+          </div>
           </div>
         </div>
       </footer>
