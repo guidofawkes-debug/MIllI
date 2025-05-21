@@ -196,7 +196,7 @@ function App() {
               <div className="relative">
                 <button
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
-                  className="flex items-center space-x-2 hover:text-[#00ff00] hover:bg-[#00cc00] rounded-full transition-colors"
+                  className="flex items-center space-x-2 hover:text-[#00ff00] dark:hover:bg-gray-700 rounded-full transition-colors"
                 >
                   <span>Menu</span>
                   <ChevronRight className="w-4 h-4" />
