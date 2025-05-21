@@ -211,7 +211,6 @@ function App() {
               </div>
               <a
                 href="tel:+263786838849"
-                
               >
                 <span>Call Now</span>
                 <ChevronRight className="w-4 h-4" />
@@ -323,6 +322,35 @@ function App() {
                           <ChevronRight className="w-4 h-4 text-[#00ff00] mr-2" />
                           {feature}
                         </li>
-                      ),
+                      )
                     )}
                   </ul>
+                </div>
+                <div>
+                  <h4 className="text-[#00ff00] font-bold mb-4">
+                    Benefits
+                  </h4>
+                  <ul className="space-y-2">
+                    {services[activeService].details.benefits.map(
+                      (benefit, index) => (
+                        <li
+                          key={index}
+                          className="flex items-center text-gray-600 dark:text-gray-300"
+                        >
+                          <ChevronRight className="w-4 h-4 text-[#00ff00] mr-2" />
+                          {benefit}
+                        </li>
+                      )
+                    )}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default App;
