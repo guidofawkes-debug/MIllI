@@ -163,7 +163,7 @@ function App() {
               />
               <span className="text-xl font-bold tracking-wider">MIllI</span>
             </div>
-            <div className="hidden md:flex space-x-8 items-center">
+            <div className="hidden md:flex space-x-10 items-center">
               <a
                 href="#services"
                 className="hover:text-[#00ff00] rounded-full dark:hover:bg-gray-700 transition-colors"
