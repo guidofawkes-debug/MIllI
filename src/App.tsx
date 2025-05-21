@@ -171,6 +171,12 @@ function App() {
                 Services
               </a>
               <a
+                href="#pricing"
+                className="hover:text-[#00ff00] transition-colors"
+              >
+                Pricing
+              </a>
+              <a
                 href="#vision"
                 className="hover:text-[#00ff00] transition-colors"
               >
@@ -187,29 +193,28 @@ function App() {
                   <Moon className="w-5 h-5 text-[#00ff00]" />
                 )}
               </button>
-              <div className="inline-flex items-center space-x-2 bg-[#00ff00] text-black px-4 py-2 rounded-full hover:bg-[#00cc00] transition-colors">
+              <div className="relative">
                 <button
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
-                  className="hover:text-[#00ff00] transition-colors"
+                  className="flex items-center space-x-2 hover:text-[#00ff00] transition-colors"
                 >
-                  More
+                  <span>Menu</span>
+                  <ChevronRight className="w-4 h-4" />
                 </button>
-                <ChevronRight className="w-4 h-4" />
                 {isMenuOpen && (
-                  <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-black border border-[#00ff00]/20 rounded-lg shadow-lg py-2">
+                  <div className="absolute right-0 mt-2 w-48 bg-white/10 dark:bg-black/10 backdrop-blur-md border border-[#00ff00]/20 rounded-lg shadow-lg py-2">
                     <a href="#" className="block px-4 py-2 hover:bg-[#00ff00]/10 transition-colors">Dashboard</a>
                     <a href="#" className="block px-4 py-2 hover:bg-[#00ff00]/10 transition-colors">Book a Demo</a>
                     <a href="#" className="block px-4 py-2 hover:bg-[#00ff00]/10 transition-colors">API Access</a>
-                    <span>Menu</span>
-                
                   </div>
                 )}
               </div>
               <a
                 href="tel:+263786838849"
-               
+                className="inline-flex items-center space-x-2 bg-[#00ff00] text-black px-4 py-2 rounded-full hover:bg-[#00cc00] transition-colors"
               >
-                
+                <span>Call Now</span>
+                <ChevronRight className="w-4 h-4" />
               </a>
             </div>
           </div>
@@ -239,11 +244,53 @@ function App() {
         </div>
       </div>
 
+      {/* Enhanced Services Section */}
+      <section
+        id="services"
+        className="py-20 bg-gradient-to-b from-white dark:from-black to-[#e6ffe6]/20 dark:to-[#003300]/20"
+      >
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl font-bold mb-16 text-center">
+            Classified Operations
+          </h2>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className="group relative bg-white/10 dark:bg-black/10 backdrop-blur-md p-8 rounded-xl hover:shadow-2xl hover:shadow-[#00ff00]/20 transition-all duration-300 border border-[#00ff00]/20"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-[#00ff00]/5 to-transparent opacity-0 group-hover:opacity-100 rounded-xl transition-opacity" />
+                <div className="relative">
+                  {service.icon}
+                  <h3 className="text-xl font-bold mt-4 mb-2">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-400">{service.description}</p>
+                  <button
+                    onClick={() => setActiveService(index)}
+                    className="mt-6 flex items-center text-[#00ff00] group-hover:text-[#00cc00]"
+                  >
+                    <span>Learn More</span>
+                    <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section id="pricing">
+        <Pricing />
+      </section>
+
       {/* Service Modal */}
       {activeService !== null && (
         <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
-          <div className="bg-[#f0fff0] dark:bg-[#001a00] border border-[#00ff00]/20 rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-            <div className="sticky top-0 bg-[#f0fff0] dark:bg-[#001a00] p-6 border-b border-[#00ff00]/20">
+          <div className="bg-white/10 dark:bg-black/10 backdrop-blur-md border border-[#00ff00]/20 rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="sticky top-0 bg-white/10 dark:bg-black/10 backdrop-blur-md p-6 border-b border-[#00ff00]/20">
               <div className="flex items-center justify-between">
                 <h3 className="text-2xl font-bold text-[#00ff00]">
                   {services[activeService].title}
@@ -312,8 +359,6 @@ function App() {
         </div>
       )}
 
-      
-
       {/* Vision Section */}
       <section id="vision" className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#e6ffe6]/20 dark:from-[#003300]/20 to-white dark:to-black z-0" />
@@ -348,7 +393,7 @@ function App() {
       {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
-          <div className="bg-white dark:bg-black dark:text-white text-black p-8 rounded-lg max-w-md w-full">
+          <div className="bg-white/10 dark:bg-black/10 backdrop-blur-md text-white p-8 rounded-lg max-w-md w-full">
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-2xl font-bold">Join The Revolution</h2>
               <button
@@ -367,7 +412,7 @@ function App() {
       )}
 
       {/* Footer */}
-      <footer className="bg-white dark:bg-black border-t border-[#00ff00]/20 py-12">
+      <footer className="bg-white/10 dark:bg-black/10 backdrop-blur-md border-t border-[#00ff00]/20 py-12">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-4">

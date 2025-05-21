@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Check, HelpCircle, Zap } from 'lucide-react';
+import { Check, X } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 
 const PricingCard = ({ 
@@ -31,10 +31,10 @@ const PricingCard = ({
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5 }}
-      className={`relative p-6 rounded-2xl ${
+      className={`relative p-6 rounded-2xl backdrop-blur-md ${
         isPopular 
-          ? 'border-2 border-[#00ff00] bg-gradient-to-b from-[#001a00] to-black' 
-          : 'border border-[#00ff00]/20 bg-black'
+          ? 'bg-white/10 dark:bg-black/10 border-2 border-[#00ff00]' 
+          : 'bg-white/5 dark:bg-black/5 border border-[#00ff00]/20'
       }`}
     >
       {isPopular && (
@@ -144,7 +144,7 @@ export const Pricing = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white py-20">
+    <div className="min-h-screen py-20 backdrop-blur-md bg-gradient-to-b from-black/50 to-transparent">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <motion.h1 
@@ -215,7 +215,7 @@ export const Pricing = () => {
                 animate={{ opacity: 1, y: 0 }}
                 className="max-w-2xl mx-auto"
               >
-                <div className="bg-gradient-to-b from-[#001a00] to-black border border-[#00ff00]/20 rounded-2xl p-8">
+                <div className="bg-white/10 dark:bg-black/10 backdrop-blur-md border border-[#00ff00]/20 rounded-2xl p-8">
                   <h3 className="text-2xl font-bold mb-4">Enterprise Solutions</h3>
                   <p className="text-gray-400 mb-6">
                     Custom solutions for large organizations with specific requirements
@@ -224,17 +224,17 @@ export const Pricing = () => {
                     <input
                       type="text"
                       placeholder="Company Name"
-                      className="w-full p-3 rounded-lg bg-black border border-[#00ff00]/20"
+                      className="w-full p-3 rounded-lg bg-white/5 dark:bg-black/5 backdrop-blur-md border border-[#00ff00]/20"
                     />
                     <input
                       type="email"
                       placeholder="Work Email"
-                      className="w-full p-3 rounded-lg bg-black border border-[#00ff00]/20"
+                      className="w-full p-3 rounded-lg bg-white/5 dark:bg-black/5 backdrop-blur-md border border-[#00ff00]/20"
                     />
                     <textarea
                       placeholder="Tell us about your needs"
                       rows={4}
-                      className="w-full p-3 rounded-lg bg-black border border-[#00ff00]/20"
+                      className="w-full p-3 rounded-lg bg-white/5 dark:bg-black/5 backdrop-blur-md border border-[#00ff00]/20"
                     />
                     <button
                       type="submit"
@@ -252,11 +252,12 @@ export const Pricing = () => {
               <div className="max-w-2xl mx-auto space-y-4">
                 {faqs.map((faq, index) => (
                   <motion.div
+                
                     key={index}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className="border border-[#00ff00]/20 rounded-lg p-6"
+                    className="bg-white/5 dark:bg-black/5 backdrop-blur-md border border-[#00ff00]/20 rounded-lg p-6"
                   >
                     <h4 className="text-lg font-bold mb-2">{faq.question}</h4>
                     <p className="text-gray-400">{faq.answer}</p>
