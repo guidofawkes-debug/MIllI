@@ -16,6 +16,7 @@ import {
   MessageCircle,
 } from "lucide-react";
 import { Auth } from "./components/Auth";
+import { Pricing } from "./components/Pricing";
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
@@ -235,6 +236,9 @@ function App() {
           </div>
         </div>
       </div>
+
+      {/* Add Pricing Section */}
+      <Pricing />
 
       {/* Enhanced Services Section */}
       <section
