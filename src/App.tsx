@@ -166,19 +166,19 @@ function App() {
             <div className="hidden md:flex space-x-8 items-center">
               <a
                 href="#services"
-                className="hover:text-[#00ff00] dark:hover:bg-gray-700 transition-colors"
+                className="hover:text-[#00ff00] rounded-full dark:hover:bg-gray-700 transition-colors"
               >
                 Services
               </a>
               <a
                 href="#pricing"
-                className="hover:text-[#00ff00] dark:hover:bg-gray-700 transition-colors"
+                className="hover:text-[#00ff00] rounded-full dark:hover:bg-gray-700 transition-colors"
               >
                 Pricing
               </a>
               <a
                 href="#vision"
-                className="hover:text-[#00ff00] dark:hover:bg-gray-700 transition-colors"
+                className="hover:text-[#00ff00] rounded-full dark:hover:bg-gray-700 transition-colors"
               >
                 Vision
               </a>
