@@ -18,7 +18,7 @@ import {
 import { Auth } from "./components/Auth";
 import { Pricing } from "./components/Pricing";
 import { Dashboard } from './components/Dashboard';
-import { useAuth } from "./context/AuthContext";
+import { useAuth } from "./AuthContext";
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
