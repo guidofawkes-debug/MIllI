@@ -414,18 +414,38 @@ function App() {
                 Pushing the boundaries of AI technology beyond human limits.
               </p>
               <div className="flex space-x-4">
-                <a href="#" className="text-gray-400 hover:text-[#00ff00] transition-colors">
-                  <Twitter className="w-5 h-5" />
-                </a>
-                <a href="#" className="text-gray-400 hover:text-[#00ff00] transition-colors">
-                  <Linkedin className="w-5 h-5" />
-                </a>
-                <a href="#" className="text-gray-400 hover:text-[#00ff00] transition-colors">
-                  <Instagram className="w-5 h-5" />
-                </a>
-                <a href="#" className="text-gray-400 hover:text-[#00ff00] transition-colors">
-                  <Facebook className="w-5 h-5" />
-                </a>
+                <a
+                href="https://x.com/Aly3nAsh"
+                className="text-gray-400 hover:text-[#00ff00] transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/millan-ashly-type"
+                className="text-gray-400 hover:text-[#00ff00] transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.instagram.com/a.shley2077"
+                className="text-gray-400 hover:text-[#00ff00] transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.facebook.com/mil.ash.9887"
+                className="text-gray-400 hover:text-[#00ff00] transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
               </div>
             </div>
             
