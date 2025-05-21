@@ -199,7 +199,7 @@ function App() {
                   className="flex items-center space-x-3 hover:text-[#00ff00] dark:hover:bg-gray-700 rounded-full transition-colors"
                 >
                   <span>Menu</span>
-                  <ChevronRight className="w-4 h-4" />
+                  <ChevronRight className="w-5 h-5" />
                 </button>
                 {isMenuOpen && (
                   <div className="absolute right-0 mt-2 w-48 bg-white/10 dark:bg-black/10 backdrop-blur-md border border-[#00ff00]/20 rounded-lg shadow-lg py-2">
