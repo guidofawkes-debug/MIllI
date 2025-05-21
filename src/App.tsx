@@ -209,12 +209,6 @@ function App() {
                   </div>
                 )}
               </div>
-              <a
-                href="tel:+263786838849"
-              >
-                <span>Call Now</span>
-                <ChevronRight className="w-4 h-4" />
-              </a>
             </div>
           </div>
         </nav>
