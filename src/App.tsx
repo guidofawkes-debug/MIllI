@@ -27,7 +27,7 @@ function App() {
 
   const services = [
     {
-      icon: <Brain className="w-8 h-8 text-[#00ff00]" />, 
+      icon: <Brain className="w-8 h-8 text-[#00ff00]" />,
       title: "AI Model Design",
       description:
         "Extraterrestrial intelligence solutions that evolve beyond human limitations",
