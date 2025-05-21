@@ -344,7 +344,7 @@ function App() {
         </div>
       )}
 
-{/* Vision Section */}
+      {/* Vision Section */}
       <section id="vision" className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#e6ffe6]/20 dark:from-[#003300]/20 to-white dark:to-black z-0" />
         <div className="container mx-auto px-6 relative z-10">
@@ -358,8 +358,8 @@ function App() {
                 breaking the barriers between possible and impossible.
               </p>
               <button
-                className="bg-transparent border-2 border-[#00ff00] text-[#00ff00] px-6 py-2 rounded-full hover:bg-[#00ff00] hover:text-black transition-all"
                 onClick={() => setIsModalOpen(true)}
+                className="w-full md:w-auto bg-[#00ff00] text-black font-bold px-8 py-3 rounded-full hover:bg-[#00cc00] transition-all duration-300 border-2 border-[#00ff00] hover:border-[#00cc00] shadow-lg hover:shadow-[#00ff00]/50"
               >
                 Join The Revolution - Sign Up for Early Access
               </button>
@@ -396,7 +396,6 @@ function App() {
         </div>
       )}
 
-      
       {/* Footer */}
       <footer className="bg-white/5 dark:bg-black/5 border-t border-[#00ff00]/20 mt-20">
         <div className="container mx-auto px-6 py-12">
