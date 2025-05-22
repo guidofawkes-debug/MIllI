@@ -33,7 +33,9 @@ const PricingCard = ({
       transition={{ duration: 0.5 }}
       className="group relative"
     >
-      <div className={`animate-border relative p-6 rounded-2xl backdrop-blur-md ${
+      <div className="absolute -inset-0.5 bg-gradient-to-r from-[#00ff00] to-[#00cc00] rounded-2xl opacity-0 group-hover:opacity-100 blur transition duration-500" />
+      
+      <div className={`relative p-6 rounded-2xl backdrop-blur-md ${
         isPopular 
           ? 'bg-white/10 dark:bg-black/10' 
           : 'bg-white/5 dark:bg-black/5'
