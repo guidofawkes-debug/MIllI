@@ -33,11 +33,7 @@ const PricingCard = ({
       transition={{ duration: 0.5 }}
       className="group relative"
     >
-      {/* Animated border */}
-      <div className="absolute -inset-0.5 bg-gradient-to-r from-[#00ff00] to-[#00cc00] rounded-2xl opacity-0 group-hover:opacity-100 blur transition duration-500" />
-      
-      {/* Card content */}
-      <div className={`relative p-6 rounded-2xl backdrop-blur-md ${
+      <div className={`animate-border relative p-6 rounded-2xl backdrop-blur-md ${
         isPopular 
           ? 'bg-white/10 dark:bg-black/10' 
           : 'bg-white/5 dark:bg-black/5'
@@ -73,7 +69,7 @@ const PricingCard = ({
         <ul className="space-y-4 mb-8">
           {features.map((feature, index) => (
             <li key={index} className="flex items-center">
-              <Check className="w-5 h-5 text-[#00ff00] mr-2" />
+              <Check className="w-5 h-5 text-[#00ff00] check-icon transition-colors duration-300 mr-2" />
               <span>{feature}</span>
             </li>
           ))}
