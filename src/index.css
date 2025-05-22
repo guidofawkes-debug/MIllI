@@ -8,55 +8,88 @@
   body {
     font-family: 'Exo 2', sans-serif;
   }
-  
 
-@keyframes fade-in {
-  from {
+  @keyframes border-spin {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 200% 50%;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pulse-scale {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
     opacity: 0;
-    transform: translateY(20px);
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
-@keyframes pulse-scale {
-  0% {
-    transform: scale(1);
+  .animate-pulse-scale {
+    animation: pulse-scale 2s infinite;
   }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 
-.animate-fade-in {
-  animation: fade-in 0.6s ease-out forwards;
-  opacity: 0;
-}
+  .animate-border {
+    position: relative;
+  }
 
-.animate-pulse-scale {
-  animation: pulse-scale 2s infinite;
-}
+  .animate-border::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    z-index: -1;
+    background: linear-gradient(90deg, #00ff00, #003300, #00ff00);
+    background-size: 200% 100%;
+    border-radius: inherit;
+    animation: border-spin 3s linear infinite;
+    opacity: 0.5;
+  }
 
-/* Mobile optimizations */
-@media (max-width: 768px) {
-  .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
+  .group:hover .animate-border::before {
+    animation-play-state: paused;
   }
-  
-  h1 {
-    font-size: 2rem !important;
+
+  .group:hover .check-icon {
+    color: black;
+    transition: color 0.3s ease;
   }
-  
-  h2 {
-    font-size: 1.5rem !important;
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    
+    h1 {
+      font-size: 2rem !important;
+    }
+    
+    h2 {
+      font-size: 1.5rem !important;
+    }
   }
-}
 
   h1, h2, h3, .title-font {
     font-family: 'Orbitron', sans-serif;
