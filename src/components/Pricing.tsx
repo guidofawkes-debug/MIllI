@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Check, X } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 
 const PricingCard = ({ 
@@ -31,52 +31,58 @@ const PricingCard = ({
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5 }}
-      className={`relative p-6 rounded-2xl backdrop-blur-md ${
-        isPopular 
-          ? 'bg-white/10 dark:bg-black/10 border-2 border-[#00ff00]' 
-          : 'bg-white/5 dark:bg-black/5 border border-[#00ff00]/20'
-      }`}
+      className="group relative"
     >
-      {isPopular && (
-        <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-          <span className="bg-[#00ff00] text-black px-4 py-1 rounded-full text-sm font-bold">
-            Most Popular
-          </span>
-        </div>
-      )}
-
-      <div className="text-center mb-8">
-        <h3 className="text-2xl font-bold mb-2">{tier}</h3>
-        <p className="text-gray-300 mb-4">{description}</p>
-        <div className="flex items-center justify-center mb-4">
-          <span className="text-4xl font-bold">$</span>
-          <motion.span 
-            key={isYearly ? yearlyPrice : price}
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-6xl font-bold"
-          >
-            {isYearly ? yearlyPrice : price}
-          </motion.span>
-          <span className="text-gray-400 ml-2">/mo</span>
-        </div>
-        {isYearly && (
-          <p className="text-[#00ff00] text-sm">Save 20% with annual billing</p>
+      {/* Animated border */}
+      <div className="absolute -inset-0.5 bg-gradient-to-r from-[#00ff00] to-[#00cc00] rounded-2xl opacity-0 group-hover:opacity-100 blur transition duration-500" />
+      
+      {/* Card content */}
+      <div className={`relative p-6 rounded-2xl backdrop-blur-md ${
+        isPopular 
+          ? 'bg-white/10 dark:bg-black/10' 
+          : 'bg-white/5 dark:bg-black/5'
+      } transition-all duration-500 group-hover:transform group-hover:scale-[1.02]`}>
+        {isPopular && (
+          <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+            <span className="bg-[#00ff00] text-black px-4 py-1 rounded-full text-sm font-bold">
+              Most Popular
+            </span>
+          </div>
         )}
+
+        <div className="text-center mb-8">
+          <h3 className="text-2xl font-bold mb-2">{tier}</h3>
+          <p className="text-gray-400 mb-4">{description}</p>
+          <div className="flex items-center justify-center mb-4">
+            <span className="text-4xl font-bold">$</span>
+            <motion.span 
+              key={isYearly ? yearlyPrice : price}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-6xl font-bold"
+            >
+              {isYearly ? yearlyPrice : price}
+            </motion.span>
+            <span className="text-gray-400 ml-2">/mo</span>
+          </div>
+          {isYearly && (
+            <p className="text-[#00ff00] text-sm">Save 20% with annual billing</p>
+          )}
+        </div>
+
+        <ul className="space-y-4 mb-8">
+          {features.map((feature, index) => (
+            <li key={index} className="flex items-center">
+              <Check className="w-5 h-5 text-[#00ff00] mr-2" />
+              <span>{feature}</span>
+            </li>
+          ))}
+        </ul>
+
+        <button className="w-full py-3 rounded-full bg-[#00ff00] text-black font-bold hover:bg-[#00cc00] transition-all duration-300 transform group-hover:scale-105">
+          Get Started
+        </button>
       </div>
-
-      <ul className="space-y-4 mb-8">
-        {features.map((feature, index) => (
-          <li key={index} className="flex items-center">
-            <Check className="w-5 h-5 text-[#00ff00] mr-2" />
-            <span>{feature}</span>
-          </li>
-        ))}
-      </ul>
-
-      <button className="w-full py-3 rounded-full bg-[#00ff00] text-black font-bold hover:bg-[#00cc00] transition-colors">
-        Get Started
-      </button>
     </motion.div>
   );
 };
@@ -262,7 +268,6 @@ export const Pricing = () => {
               <div className="max-w-2xl mx-auto space-y-4">
                 {faqs.map((faq, index) => (
                   <motion.div
-
                     key={index}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
