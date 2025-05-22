@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import {
   Brain,
   Shield,
@@ -26,6 +26,18 @@ import Terms from './pages/Terms';
 import CookiePolicy from './pages/CookiePolicy';
 import SecurityPolicy from './pages/SecurityPolicy';
 import { ROUTES, SOCIAL_LINKS } from './config/constants';
+import { ModalPage } from './components/ui/Modal';
+
+const PageWrapper = ({ children }: { children: React.ReactNode }) => {
+  const location = useLocation();
+  const isModalRoute = [ROUTES.about, ROUTES.privacy, ROUTES.terms, ROUTES.cookies, ROUTES.security].includes(location.pathname);
+
+  if (isModalRoute) {
+    return <ModalPage>{children}</ModalPage>;
+  }
+
+  return <>{children}</>;
+};
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
@@ -591,11 +603,31 @@ function App() {
               {/* Main content components */}
             </div>
           } />
-          <Route path={ROUTES.about} element={<AboutUs />} />
-          <Route path={ROUTES.privacy} element={<PrivacyPolicy />} />
-          <Route path={ROUTES.terms} element={<Terms />} />
-          <Route path={ROUTES.cookies} element={<CookiePolicy />} />
-          <Route path={ROUTES.security} element={<SecurityPolicy />} />
+          <Route path={ROUTES.about} element={
+            <PageWrapper>
+              <AboutUs />
+            </PageWrapper>
+          } />
+          <Route path={ROUTES.privacy} element={
+            <PageWrapper>
+              <PrivacyPolicy />
+            </PageWrapper>
+          } />
+          <Route path={ROUTES.terms} element={
+            <PageWrapper>
+              <Terms />
+            </PageWrapper>
+          } />
+          <Route path={ROUTES.cookies} element={
+            <PageWrapper>
+              <CookiePolicy />
+            </PageWrapper>
+          } />
+          <Route path={ROUTES.security} element={
+            <PageWrapper>
+              <SecurityPolicy />
+            </PageWrapper>
+          } />
         </Routes>
       </div>
     </Router>
@@ -603,5 +635,3 @@ function App() {
 }
 
 export default App;
-
-export default App
