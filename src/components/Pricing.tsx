@@ -34,7 +34,15 @@ const PricingCard = ({
       className="group relative"
     >
       {/* Animated border */}
-      <div className="absolute -inset-0.5 bg-gradient-to-r from-[#00ff00] to-[#00cc00] rounded-2xl opacity-0 group-hover:opacity-100 blur transition duration-500" />
+      <div className="absolute -inset-0.5 rounded-2xl overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#00ff00] to-[#00cc00] group-hover:opacity-100 opacity-75">
+          <div className="absolute inset-0 animate-border-spin group-hover:animation-pause" 
+               style={{
+                 background: 'conic-gradient(from 0deg at 50% 50%, transparent 0deg, #00ff00 360deg)',
+                 animation: 'spin 2s linear infinite'
+               }} />
+        </div>
+      </div>
       
       {/* Card content */}
       <div className={`relative p-6 rounded-2xl backdrop-blur-md ${
@@ -73,7 +81,7 @@ const PricingCard = ({
         <ul className="space-y-4 mb-8">
           {features.map((feature, index) => (
             <li key={index} className="flex items-center">
-              <Check className="w-5 h-5 text-[#00ff00] mr-2" />
+              <Check className="w-5 h-5 text-[#00ff00] transition-colors duration-300 group-hover:text-black dark:group-hover:text-white mr-2" />
               <span>{feature}</span>
             </li>
           ))}
