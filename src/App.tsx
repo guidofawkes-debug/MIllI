@@ -582,12 +582,35 @@ function App() {
       </div>
       <Routes>
         <Route path="/" element={
-          <div>
-            {/* Hero Section */}
-            {/* Services Section */}
-            {/* Vision Section */}
-            {/* Other main content */}
-          </div>
+          <>
+            <div className="relative container mx-auto px-6 py-24 md:py-32">
+              <div className={`transition-all duration-1000 transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
+                <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-[#00ff00] to-[#00cc00] bg-clip-text text-transparent mb-8">
+                  Straight Outta Area 51
+                </h1>
+                <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl">
+                  Advanced AI solutions beyond conventional boundaries. Welcome to
+                  the next evolution of technology.
+                </p>
+                <a
+                  href="tel:+263786838849"
+                  className="group flex items-center space-x-2 bg-[#00ff00] hover:bg-[#00cc00] text-black font-bold px-8 py-3 rounded-full transition-all w-fit"
+                >
+                  <span>Call Us Now</span>
+                  <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </div>
+            </div>
+            <section id="services" className="relative mt-20">
+              {/* Services section content remains the same */}
+            </section>
+            <section id="pricing">
+              <Pricing />
+            </section>
+            <section id="vision" className="py-20 relative overflow-hidden">
+              {/* Vision section content remains the same */}
+            </section>
+          </>
         } />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
