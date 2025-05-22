@@ -148,7 +148,7 @@ function App() {
 
   return (
     <Router>
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
+      <div className="absolute inset-0 bg-gradient-to-b from-[#e6ffe6]/20 dark:from-[#003300]/20 to-white dark:to-black z-0">
         {/* WhatsApp Bubble */}
         <a
           href="https://wa.me/263715338621"
@@ -162,7 +162,7 @@ function App() {
 
         {/* Hero Section */}
         <div className="relative overflow-hidden bg-transparent">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#00ff00]/5 to-[#003300]/10 dark:from-[#00ff00]/10 dark:to-[#003300]/20 z-0" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#e6ffe6]/20 dark:from-[#003300]/20 to-white dark:to-black z-0absolute inset-0 bg-gradient-to-b from-[#e6ffe6]/20 dark:from-[#003300]/20 to-white dark:to-black z-0" />
           <div
             className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80')] 
           bg-cover bg-center opacity-5 dark:opacity-10 z-[-1]"
@@ -283,7 +283,7 @@ function App() {
         {/* Enhanced Services Section */}
         <section
           id="services"
-          className="py-20 bg-gradient-to-b from-white dark:from-black to-[#e6ffe6]/20 dark:to-[#003300]/20"
+          className="absolute inset-0 bg-gradient-to-b from-[#e6ffe6]/20 dark:from-[#003300]/20 to-white dark:to-black z-0"
         >
           <div className="container mx-auto px-6">
             <h2 className="text-3xl font-bold mb-16 text-center">
