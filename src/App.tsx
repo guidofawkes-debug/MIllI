@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import {
   Brain,
   Shield,
@@ -19,12 +19,13 @@ import {
 import { Auth } from "./components/Auth";
 import { Pricing } from "./components/Pricing";
 import { Dashboard } from './components/Dashboard';
-import { useAuth } from "./AuthContext";
+import { useAuth } from "./hooks/useAuth";
 import AboutUs from './pages/AboutUs';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Terms from './pages/Terms';
 import CookiePolicy from './pages/CookiePolicy';
 import SecurityPolicy from './pages/SecurityPolicy';
+import { ROUTES, SOCIAL_LINKS } from './config/constants';
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
@@ -189,11 +190,12 @@ function App() {
                 </svg>
               </button>
               <div 
-  className={`${isMenuOpen ? 'translate-x-0 opacity-100' : '-translate-x-full md:translate-x-0 opacity-0 md:opacity-100'} 
-  md:flex flex-col md:flex-row fixed md:relative inset-y-0 left-0 right-1/4 md:right-auto md:top-auto 
-  bg-white/95 md:bg-transparent backdrop-blur-lg md:backdrop-blur-none md:space-x-8 
-  items-center py-4 md:py-0 space-y-4 md:space-y-0 shadow-2xl md:shadow-none 
-  transition-all duration-300 ease-in-out z-50 md:z-auto`}>
+                className={`${isMenuOpen ? 'translate-x-0 opacity-100' : '-translate-x-full md:translate-x-0 opacity-0 md:opacity-100'} 
+                md:flex flex-col md:flex-row fixed md:relative inset-y-0 left-0 right-1/4 md:right-auto md:top-auto 
+                bg-white/95 md:bg-transparent backdrop-blur-lg md:backdrop-blur-none md:space-x-8 
+                items-center py-4 md:py-0 space-y-4 md:space-y-0 shadow-2xl md:shadow-none 
+                transition-all duration-300 ease-in-out z-50 md:z-auto`}
+              >
                 <a
                   href="#services"
                   className="hover:text-[#00ff00] transition-colors"
@@ -264,8 +266,7 @@ function App() {
 
           <div className="relative container mx-auto px-6 py-24 md:py-32">
             <div
-              className={`transition-all duration-1000 transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-                }`}
+              className={`transition-all duration-1000 transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
             >
               <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-[#00ff00] to-[#00cc00] bg-clip-text text-transparent mb-8">
                 Straight Outta Area 51
@@ -465,7 +466,7 @@ function App() {
                 </p>
                 <div className="flex space-x-4">
                   <a
-                    href="https://x.com/Aly3nAsh"
+                    href={SOCIAL_LINKS.twitter}
                     className="text-gray-400 hover:text-[#00ff00] transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -473,7 +474,7 @@ function App() {
                     <Twitter className="w-5 h-5" />
                   </a>
                   <a
-                    href="https://www.linkedin.com/in/millan-ashly-type"
+                    href={SOCIAL_LINKS.linkedin}
                     className="text-gray-400 hover:text-[#00ff00] transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -481,7 +482,7 @@ function App() {
                     <Linkedin className="w-5 h-5" />
                   </a>
                   <a
-                    href="https://www.instagram.com/a.shley2077"
+                    href={SOCIAL_LINKS.instagram}
                     className="text-gray-400 hover:text-[#00ff00] transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -489,7 +490,7 @@ function App() {
                     <Instagram className="w-5 h-5" />
                   </a>
                   <a
-                    href="https://www.facebook.com/mil.ash.9887"
+                    href={SOCIAL_LINKS.facebook}
                     className="text-gray-400 hover:text-[#00ff00] transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -529,9 +530,9 @@ function App() {
                 <h3 className="font-bold mb-6">Company</h3>
                 <ul className="space-y-4">
                   <li>
-                    <a href="/about" className="text-gray-400 hover:text-[#00ff00] transition-colors">
+                    <Link to={ROUTES.about} className="text-gray-400 hover:text-[#00ff00] transition-colors">
                       About Us
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <a href="#" className="text-gray-400 hover:text-[#00ff00] transition-colors">
@@ -555,56 +556,52 @@ function App() {
                 <h3 className="font-bold mb-6">Legal</h3>
                 <ul className="space-y-4">
                   <li>
-                    <a href="/privacy" className="text-gray-400 hover:text-[#00ff00] transition-colors">
+                    <Link to={ROUTES.privacy} className="text-gray-400 hover:text-[#00ff00] transition-colors">
                       Privacy Policy
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="/terms" className="text-gray-400 hover:text-[#00ff00] transition-colors">
+                    <Link to={ROUTES.terms} className="text-gray-400 hover:text-[#00ff00] transition-colors">
                       Terms of Service
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="/cookies" className="text-gray-400 hover:text-[#00ff00] transition-colors">
+                    <Link to={ROUTES.cookies} className="text-gray-400 hover:text-[#00ff00] transition-colors">
                       Cookie Policy
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="/security" className="text-gray-400 hover:text-[#00ff00] transition-colors">
+                    <Link to={ROUTES.security} className="text-gray-400 hover:text-[#00ff00] transition-colors">
                       Security
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
             </div>
 
             <div className="border-t border-[#00ff00]/20 mt-12 pt-8 text-center text-gray-400">
-              <p>&copy; {new Date().getFullYear()} Milli Intelligent Technologies. Revolutionizing reality one
-                byte at a time.</p>
-              <div className="mt-8 text-center text-gray-600">
-
-              </div>
+              <p>&copy; {new Date().getFullYear()} Milli Intelligent Technologies. Revolutionizing reality one byte at a time.</p>
             </div>
           </div>
         </footer>
+
+        <Routes>
+          <Route path={ROUTES.home} element={
+            <div>
+              {/* Main content components */}
+            </div>
+          } />
+          <Route path={ROUTES.about} element={<AboutUs />} />
+          <Route path={ROUTES.privacy} element={<PrivacyPolicy />} />
+          <Route path={ROUTES.terms} element={<Terms />} />
+          <Route path={ROUTES.cookies} element={<CookiePolicy />} />
+          <Route path={ROUTES.security} element={<SecurityPolicy />} />
+        </Routes>
       </div>
-      <Routes>
-        <Route path="/" element={
-          <div>
-            {/* Hero Section */}
-            {/* Services Section */}
-            {/* Vision Section */}
-            {/* Other main content */}
-          </div>
-        } />
-        <Route path="/about" element={<AboutUs />} />
-        <Route path="/privacy" element={<PrivacyPolicy />} />
-        <Route path="/terms" element={<Terms />} />
-        <Route path="/cookies" element={<CookiePolicy />} />
-        <Route path="/security" element={<SecurityPolicy />} />
-      </Routes>
     </Router>
   );
 }
 
 export default App;
+
+export default App
