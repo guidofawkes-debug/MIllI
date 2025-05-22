@@ -148,7 +148,7 @@ function App() {
 
   return (
     <Router>
-      <div className="absolute inset-0 bg-gradient-to-b from-[#e6ffe6]/20 dark:from-[#003300]/20 to-white dark:to-black z-0">
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
         {/* WhatsApp Bubble */}
         <a
           href="https://wa.me/263715338621"
@@ -160,9 +160,15 @@ function App() {
           <MessageCircle className="w-6 h-6 text-white" />
         </a>
 
-        {/* Navigation */}
-        <nav className="fixed top-0 left-0 right-0 bg-white/10 dark:bg-black/10 backdrop-blur-md z-50 border-b border-[#00ff00]/20">
-          <div className="container mx-auto px-6 py-4">
+        {/* Hero Section */}
+        <div className="relative overflow-hidden bg-transparent">
+          <div className="absolute inset-0 bg-gradient-to-r from-[#00ff00]/5 to-[#003300]/10 dark:from-[#00ff00]/10 dark:to-[#003300]/20 z-0" />
+          <div
+            className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80')] 
+          bg-cover bg-center opacity-5 dark:opacity-10 z-[-1]"
+          />
+
+          <nav className="relative z-10 container mx-auto px-6 py-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-4">
                 <img
@@ -174,111 +180,110 @@ function App() {
                 />
                 <span className="text-xl font-bold tracking-wider">MIllI</span>
               </div>
-              <div className="flex items-center space-x-4">
-                <button
-                  className="md:hidden p-2"
-                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+              <button 
+                className="md:hidden p-2"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+              </button>
+              <div className={`${isMenuOpen ? 'flex' : 'hidden'} md:flex flex-col md:flex-row absolute md:relative top-full left-0 right-0 md:top-auto bg-white/95 dark:bg-black/95 md:bg-transparent backdrop-blur-lg md:backdrop-blur-none md:space-x-8 items-center py-4 md:py-0 space-y-4 md:space-y-0 border-b md:border-b-0 border-[#00ff00]/20`}>
+                <a
+                  href="#services"
+                  className="hover:text-[#00ff00] transition-colors"
                 >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-                  </svg>
-                </button>
-                <div className={`${isMenuOpen ? 'flex' : 'hidden'} md:flex flex-col md:flex-row absolute md:relative top-full left-0 right-0 md:top-auto bg-white/95 dark:bg-black/95 md:bg-transparent backdrop-blur-lg md:backdrop-blur-none md:space-x-8 items-center py-4 md:py-0 space-y-4 md:space-y-0 border-b md:border-b-0 border-[#00ff00]/20`}>
-                  <a
-                    href="#services"
-                    className="hover:text-[#00ff00] transition-colors"
-                  >
-                    Services
-                  </a>
-                  <a
-                    href="#pricing"
-                    className="hover:text-[#00ff00] transition-colors"
-                  >
-                    Pricing
-                  </a>
-                  <a
-                    href="#vision"
-                    className="hover:text-[#00ff00] transition-colors"
-                  >
-                    Vision
-                  </a>
-                  <button
-                    onClick={() => setIsDarkMode(!isDarkMode)}
-                    className="p-2 rounded-full hover:bg-gray-800 dark:hover:bg-gray-700 transition-colors"
-                    aria-label="Toggle dark mode"
-                  >
-                    {isDarkMode ? (
-                      <Sun className="w-5 h-5 text-[#00ff00]" />
-                    ) : (
-                      <Moon className="w-5 h-5 text-[#00ff00]" />
-                    )}
-                  </button>
-                  {currentUser ? (
-                    <div className="relative">
-                      <button
-                        onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        className="inline-flex items-center space-x-2 bg-[#00ff00] text-black px-4 py-2 rounded-full hover:bg-[#00cc00] transition-colors"
-                      >
-                        <span>Menu</span>
-                        <ChevronRight className="w-4 h-4" />
-                      </button>
-                      {isMenuOpen && (
-                        <div className="absolute right-0 mt-2 w-48 bg-white/10 dark:bg-black/10 backdrop-blur-md border border-[#00ff00]/20 rounded-lg shadow-lg py-2">
-                          <a
-                            href="#"
-                            onClick={(e) => {
-                              e.preventDefault();
-                              setShowDashboard(true);
-                            }}
-                            className="block px-4 py-2 hover:bg-[#00ff00]/10 transition-colors"
-                          >
-                            Dashboard
-                          </a>
-                          <a href="#" className="block px-4 py-2 hover:bg-[#00ff00]/10 transition-colors">Book a Demo</a>
-                          <a href="#" className="block px-4 py-2 hover:bg-[#00ff00]/10 transition-colors">API Access</a>
-                        </div>
-                      )}
-                    </div>
+                  Services
+                </a>
+                <a
+                  href="#pricing"
+                  className="hover:text-[#00ff00] transition-colors"
+                >
+                  Pricing
+                </a>
+                <a
+                  href="#vision"
+                  className="hover:text-[#00ff00] transition-colors"
+                >
+                  Vision
+                </a>
+                <button
+                  onClick={() => setIsDarkMode(!isDarkMode)}
+                  className="p-2 rounded-full hover:bg-gray-800 dark:hover:bg-gray-700 transition-colors"
+                  aria-label="Toggle dark mode"
+                >
+                  {isDarkMode ? (
+                    <Sun className="w-5 h-5 text-[#00ff00]" />
                   ) : (
+                    <Moon className="w-5 h-5 text-[#00ff00]" />
+                  )}
+                </button>
+                {currentUser ? (
+                  <div className="relative">
                     <button
-                      onClick={() => setIsModalOpen(true)}
+                      onClick={() => setIsMenuOpen(!isMenuOpen)}
                       className="inline-flex items-center space-x-2 bg-[#00ff00] text-black px-4 py-2 rounded-full hover:bg-[#00cc00] transition-colors"
                     >
-                      <span>Sign In</span>
+                      <span>Menu</span>
                       <ChevronRight className="w-4 h-4" />
                     </button>
-                  )}
-                </div>
-              </div>
-            </nav>
-
-            <div className="relative container mx-auto px-6 py-24 md:py-32">
-              <div
-                className={`transition-all duration-1000 transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-                  }`}
-              >
-                <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-[#00ff00] to-[#00cc00] bg-clip-text text-transparent mb-8">
-                  Straight Outta Area 51
-                </h1>
-                <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl">
-                  Advanced AI solutions beyond conventional boundaries. Welcome to
-                  the next evolution of technology.
-                </p>
-                <a
-                  href="tel:+263786838849"
-                  className="group flex items-center space-x-2 bg-[#00ff00] hover:bg-[#00cc00] text-black font-bold px-8 py-3 rounded-full transition-all w-fit"
-                >
-                  <span>Call Us Now</span>
-                  <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </a>
+                    {isMenuOpen && (
+                      <div className="absolute right-0 mt-2 w-48 bg-white/10 dark:bg-black/10 backdrop-blur-md border border-[#00ff00]/20 rounded-lg shadow-lg py-2">
+                        <a
+                          href="#"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            setShowDashboard(true);
+                          }}
+                          className="block px-4 py-2 hover:bg-[#00ff00]/10 transition-colors"
+                        >
+                          Dashboard
+                        </a>
+                        <a href="#" className="block px-4 py-2 hover:bg-[#00ff00]/10 transition-colors">Book a Demo</a>
+                        <a href="#" className="block px-4 py-2 hover:bg-[#00ff00]/10 transition-colors">API Access</a>
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <button
+                    onClick={() => setIsModalOpen(true)}
+                    className="inline-flex items-center space-x-2 bg-[#00ff00] text-black px-4 py-2 rounded-full hover:bg-[#00cc00] transition-colors"
+                  >
+                    <span>Sign In</span>
+                    <ChevronRight className="w-4 h-4" />
+                  </button>
+                )}
               </div>
             </div>
+          </nav>
+
+          <div className="relative container mx-auto px-6 py-24 md:py-32">
+            <div
+              className={`transition-all duration-1000 transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                }`}
+            >
+              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-[#00ff00] to-[#00cc00] bg-clip-text text-transparent mb-8">
+                Straight Outta Area 51
+              </h1>
+              <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl">
+                Advanced AI solutions beyond conventional boundaries. Welcome to
+                the next evolution of technology.
+              </p>
+              <a
+                href="tel:+263786838849"
+                className="group flex items-center space-x-2 bg-[#00ff00] hover:bg-[#00cc00] text-black font-bold px-8 py-3 rounded-full transition-all w-fit"
+              >
+                <span>Call Us Now</span>
+                <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </div>
           </div>
+        </div>
 
         {/* Enhanced Services Section */}
         <section
           id="services"
-          className="relative py-20 bg-gradient-to-b from-[#e6ffe6]/20 dark:from-[#003300]/20 to-white dark:to-black"
+          className="py-20 bg-gradient-to-b from-white dark:from-black to-[#e6ffe6]/20 dark:to-[#003300]/20"
         >
           <div className="container mx-auto px-6">
             <h2 className="text-3xl font-bold mb-16 text-center">
@@ -577,47 +582,12 @@ function App() {
       </div>
       <Routes>
         <Route path="/" element={
-          <main className="pt-20">
+          <div>
             {/* Hero Section */}
-            <section className="relative py-24 md:py-32 bg-gradient-to-b from-[#e6ffe6]/20 dark:from-[#003300]/20 to-white/5 dark:to-black/5">
-              <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-5 dark:opacity-10 z-0" />
-              <div className="relative container mx-auto px-6 z-10">
-                <div className={`transition-all duration-1000 transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
-                  <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-[#00ff00] to-[#00cc00] bg-clip-text text-transparent mb-8">
-                    Straight Outta Area 51
-                  </h1>
-                  <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl">
-                    Advanced AI solutions beyond conventional boundaries. Welcome to
-                    the next evolution of technology.
-                  </p>
-                  <a
-                    href="tel:+263786838849"
-                    className="group flex items-center space-x-2 bg-[#00ff00] hover:bg-[#00cc00] text-black font-bold px-8 py-3 rounded-full transition-all w-fit"
-                  >
-                    <span>Call Us Now</span>
-                    <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </a>
-                </div>
-              </div>
-            </section>
-
             {/* Services Section */}
-            <section id="services" className="relative py-20">
-              <div className="container mx-auto px-6">
-                {/* Services content */}
-              </div>
-            </section>
-
-            {/* Pricing Section */}
-            <section id="pricing">
-              <Pricing />
-            </section>
-
             {/* Vision Section */}
-            <section id="vision" className="py-20 relative overflow-hidden">
-              {/* Vision content */}
-            </section>
-          </main>
+            {/* Other main content */}
+          </div>
         } />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
