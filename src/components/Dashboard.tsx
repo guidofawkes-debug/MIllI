@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAuth } from './context/sAuthContext';
+import { useAuth } from './contexts/AuthContext';
 import { UserProfile } from './UserProfile';
 import { Brain, Shield, Code2, Bot, Settings, Users, Activity, Bell } from 'lucide-react';
 
