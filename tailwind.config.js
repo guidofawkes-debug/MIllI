@@ -16,6 +16,11 @@ export default {
       },
       animation: {
         float: 'float 6s ease-in-out infinite',
+        'fade-in': 'fade-in 0.6s ease-out forwards',
+        'pulse-scale': 'pulse-scale 2s infinite',
+      },
+      transitionTimingFunction: {
+        'bounce-in': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
       }
     },
   },

@@ -188,7 +188,12 @@ function App() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
                 </svg>
               </button>
-              <div className={`${isMenuOpen ? 'flex' : 'hidden'} md:flex flex-col md:flex-row absolute md:relative top-full left-0 right-0 md:top-auto bg-white/5 dark:bg-black/5 md:bg-transparent backdrop-blur-lg md:backdrop-blur-none md:space-x-8 items-center py-4 md:py-0 space-y-4 md:space-y-0 border-b md:border-b-0 border-[#00ff00]/20`}>
+              <div 
+  className={`${isMenuOpen ? 'translate-x-0 opacity-100' : '-translate-x-full md:translate-x-0 opacity-0 md:opacity-100'} 
+  md:flex flex-col md:flex-row fixed md:relative inset-y-0 left-0 right-1/4 md:right-auto md:top-auto 
+  bg-white/95 dark:bg-black/95 md:bg-transparent backdrop-blur-lg md:backdrop-blur-none md:space-x-8 
+  items-center py-4 md:py-0 space-y-4 md:space-y-0 shadow-2xl md:shadow-none 
+  transition-all duration-300 ease-in-out z-50 md:z-auto`}>
                 <a
                   href="#services"
                   className="hover:text-[#00ff00] transition-colors"
@@ -294,7 +299,10 @@ function App() {
               {services.map((service, index) => (
                 <div
                   key={index}
-                  className="group relative bg-white/10 dark:bg-black/10 backdrop-blur-md p-8 rounded-xl hover:shadow-2xl hover:shadow-[#00ff00]/20 transition-all duration-300 border border-[#00ff00]/20"
+                  className="group relative bg-white/10 dark:bg-black/10 backdrop-blur-md p-6 md:p-8 rounded-xl hover:shadow-2xl hover:shadow-[#00ff00]/20 transition-all duration-300 border border-[#00ff00]/20 animate-fade-in"
+                  style={{
+                    animationDelay: `${index * 150}ms`,
+                  }}
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-[#00ff00]/5 to-transparent opacity-0 group-hover:opacity-100 rounded-xl transition-opacity" />
                   <div className="relative">
