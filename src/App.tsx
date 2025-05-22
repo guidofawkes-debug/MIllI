@@ -161,11 +161,11 @@ function App() {
         </a>
 
         {/* Hero Section */}
-        <div className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#00ff00]/10 to-[#003300]/20 dark:from-[#00ff00]/20 dark:to-[#003300]/30 z-0" />
+        <div className="relative overflow-hidden bg-transparent">
+          <div className="absolute inset-0 bg-gradient-to-r from-[#00ff00]/5 to-[#003300]/10 dark:from-[#00ff00]/10 dark:to-[#003300]/20 z-0" />
           <div
             className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80')] 
-          bg-cover bg-center opacity-10 dark:opacity-20 z-[-1]"
+          bg-cover bg-center opacity-5 dark:opacity-10 z-[-1]"
           />
 
           <nav className="relative z-10 container mx-auto px-6 py-4">
