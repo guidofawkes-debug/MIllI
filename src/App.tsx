@@ -172,13 +172,23 @@ function App() {
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-4">
                 <img
+                  srcSet="/GlaCK0N Transparent symbol.png 1x, /GlaCK0N Main Logo.png 2x"
                   src="/GlaCK0N Transparent symbol.png"
                   alt="MIllI Logo"
                   className="w-12 h-12 object-contain"
+                  loading="eager"
                 />
                 <span className="text-xl font-bold tracking-wider">MIllI</span>
               </div>
-              <div className="hidden md:flex space-x-8 items-center">
+              <button 
+                className="md:hidden p-2"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+              </button>
+              <div className={`${isMenuOpen ? 'flex' : 'hidden'} md:flex flex-col md:flex-row absolute md:relative top-full left-0 right-0 md:top-auto bg-white/95 dark:bg-black/95 md:bg-transparent backdrop-blur-lg md:backdrop-blur-none md:space-x-8 items-center py-4 md:py-0 space-y-4 md:space-y-0 border-b md:border-b-0 border-[#00ff00]/20`}>
                 <a
                   href="#services"
                   className="hover:text-[#00ff00] transition-colors"
@@ -280,7 +290,7 @@ function App() {
               Classified Operations
             </h2>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
               {services.map((service, index) => (
                 <div
                   key={index}
@@ -571,6 +581,14 @@ function App() {
         </footer>
       </div>
       <Routes>
+        <Route path="/" element={
+          <div>
+            {/* Hero Section */}
+            {/* Services Section */}
+            {/* Vision Section */}
+            {/* Other main content */}
+          </div>
+        } />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<Terms />} />
