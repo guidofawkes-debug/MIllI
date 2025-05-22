@@ -160,22 +160,20 @@ function App() {
           <MessageCircle className="w-6 h-6 text-white" />
         </a>
 
-        {/* Hero Section */}
-        <section className="relative py-24 md:py-32 bg-gradient-to-b from-[#e6ffe6]/20 dark:from-[#003300]/20 to-white/5 dark:to-black/5">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-5 dark:opacity-10 z-0" />
-          <div className="relative container mx-auto px-6 z-10">
-            <nav className="relative z-10 container mx-auto px-6 py-4">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-4">
-                  <img
-                    srcSet="/GlaCK0N Transparent symbol.png 1x, /GlaCK0N Main Logo.png 2x"
-                    src="/GlaCK0N Transparent symbol.png"
-                    alt="MIllI Logo"
-                    className="w-12 h-12 object-contain"
-                    loading="eager"
-                  />
-                  <span className="text-xl font-bold tracking-wider">MIllI</span>
-                </div>
+        {/* Navigation */}
+        <nav className="fixed top-0 left-0 right-0 bg-white/10 dark:bg-black/10 backdrop-blur-md z-50 border-b border-[#00ff00]/20">
+          <div className="container mx-auto px-6 py-4">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-4">
+                <img
+                  srcSet="/GlaCK0N Transparent symbol.png 1x, /GlaCK0N Main Logo.png 2x"
+                  src="/GlaCK0N Transparent symbol.png"
+                  alt="MIllI Logo"
+                  className="w-12 h-12 object-contain"
+                  loading="eager"
+                />
+                <span className="text-xl font-bold tracking-wider">MIllI</span>
+              </div>
                 <button
                   className="md:hidden p-2"
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -579,35 +577,47 @@ function App() {
       </div>
       <Routes>
         <Route path="/" element={
-          <>
-            <div className="relative container mx-auto px-6 py-24 md:py-32">
-              <div className={`transition-all duration-1000 transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
-                <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-[#00ff00] to-[#00cc00] bg-clip-text text-transparent mb-8">
-                  Straight Outta Area 51
-                </h1>
-                <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl">
-                  Advanced AI solutions beyond conventional boundaries. Welcome to
-                  the next evolution of technology.
-                </p>
-                <a
-                  href="tel:+263786838849"
-                  className="group flex items-center space-x-2 bg-[#00ff00] hover:bg-[#00cc00] text-black font-bold px-8 py-3 rounded-full transition-all w-fit"
-                >
-                  <span>Call Us Now</span>
-                  <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </a>
+          <main className="pt-20">
+            {/* Hero Section */}
+            <section className="relative py-24 md:py-32 bg-gradient-to-b from-[#e6ffe6]/20 dark:from-[#003300]/20 to-white/5 dark:to-black/5">
+              <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-5 dark:opacity-10 z-0" />
+              <div className="relative container mx-auto px-6 z-10">
+                <div className={`transition-all duration-1000 transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
+                  <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-[#00ff00] to-[#00cc00] bg-clip-text text-transparent mb-8">
+                    Straight Outta Area 51
+                  </h1>
+                  <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl">
+                    Advanced AI solutions beyond conventional boundaries. Welcome to
+                    the next evolution of technology.
+                  </p>
+                  <a
+                    href="tel:+263786838849"
+                    className="group flex items-center space-x-2 bg-[#00ff00] hover:bg-[#00cc00] text-black font-bold px-8 py-3 rounded-full transition-all w-fit"
+                  >
+                    <span>Call Us Now</span>
+                    <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </div>
               </div>
-            </div>
-            <section id="services" className="relative mt-20">
-              {/* Services section content remains the same */}
             </section>
+
+            {/* Services Section */}
+            <section id="services" className="relative py-20">
+              <div className="container mx-auto px-6">
+                {/* Services content */}
+              </div>
+            </section>
+
+            {/* Pricing Section */}
             <section id="pricing">
               <Pricing />
             </section>
+
+            {/* Vision Section */}
             <section id="vision" className="py-20 relative overflow-hidden">
-              {/* Vision section content remains the same */}
+              {/* Vision content */}
             </section>
-          </>
+          </main>
         } />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
