@@ -161,124 +161,121 @@ function App() {
         </a>
 
         {/* Hero Section */}
-        <div className="relative overflow-hidden bg-transparent">
-          <div className="absolute inset-0 bg-gradient-to-b from-[#e6ffe6]/20 dark:from-[#003300]/20 to-white dark:to-black z-0absolute inset-0 bg-gradient-to-b from-[#e6ffe6]/20 dark:from-[#003300]/20 to-white dark:to-black z-0" />
-          <div
-            className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80')] 
-          bg-cover bg-center opacity-5 dark:opacity-10 z-[-1]"
-          />
-
-          <nav className="relative z-10 container mx-auto px-6 py-4">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-4">
-                <img
-                  srcSet="/GlaCK0N Transparent symbol.png 1x, /GlaCK0N Main Logo.png 2x"
-                  src="/GlaCK0N Transparent symbol.png"
-                  alt="MIllI Logo"
-                  className="w-12 h-12 object-contain"
-                  loading="eager"
-                />
-                <span className="text-xl font-bold tracking-wider">MIllI</span>
-              </div>
-              <button 
-                className="md:hidden p-2"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
-              </button>
-              <div className={`${isMenuOpen ? 'flex' : 'hidden'} md:flex flex-col md:flex-row absolute md:relative top-full left-0 right-0 md:top-auto bg-white/95 dark:bg-black/95 md:bg-transparent backdrop-blur-lg md:backdrop-blur-none md:space-x-8 items-center py-4 md:py-0 space-y-4 md:space-y-0 border-b md:border-b-0 border-[#00ff00]/20`}>
-                <a
-                  href="#services"
-                  className="hover:text-[#00ff00] transition-colors"
-                >
-                  Services
-                </a>
-                <a
-                  href="#pricing"
-                  className="hover:text-[#00ff00] transition-colors"
-                >
-                  Pricing
-                </a>
-                <a
-                  href="#vision"
-                  className="hover:text-[#00ff00] transition-colors"
-                >
-                  Vision
-                </a>
+        <section className="relative py-24 md:py-32 bg-gradient-to-b from-[#e6ffe6]/20 dark:from-[#003300]/20 to-white/5 dark:to-black/5">
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-5 dark:opacity-10 z-0" />
+          <div className="relative container mx-auto px-6 z-10">
+            <nav className="relative z-10 container mx-auto px-6 py-4">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-4">
+                  <img
+                    srcSet="/GlaCK0N Transparent symbol.png 1x, /GlaCK0N Main Logo.png 2x"
+                    src="/GlaCK0N Transparent symbol.png"
+                    alt="MIllI Logo"
+                    className="w-12 h-12 object-contain"
+                    loading="eager"
+                  />
+                  <span className="text-xl font-bold tracking-wider">MIllI</span>
+                </div>
                 <button
-                  onClick={() => setIsDarkMode(!isDarkMode)}
-                  className="p-2 rounded-full hover:bg-gray-800 dark:hover:bg-gray-700 transition-colors"
-                  aria-label="Toggle dark mode"
+                  className="md:hidden p-2"
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
                 >
-                  {isDarkMode ? (
-                    <Sun className="w-5 h-5 text-[#00ff00]" />
-                  ) : (
-                    <Moon className="w-5 h-5 text-[#00ff00]" />
-                  )}
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+                  </svg>
                 </button>
-                {currentUser ? (
-                  <div className="relative">
+                <div className={`${isMenuOpen ? 'flex' : 'hidden'} md:flex flex-col md:flex-row absolute md:relative top-full left-0 right-0 md:top-auto bg-white/95 dark:bg-black/95 md:bg-transparent backdrop-blur-lg md:backdrop-blur-none md:space-x-8 items-center py-4 md:py-0 space-y-4 md:space-y-0 border-b md:border-b-0 border-[#00ff00]/20`}>
+                  <a
+                    href="#services"
+                    className="hover:text-[#00ff00] transition-colors"
+                  >
+                    Services
+                  </a>
+                  <a
+                    href="#pricing"
+                    className="hover:text-[#00ff00] transition-colors"
+                  >
+                    Pricing
+                  </a>
+                  <a
+                    href="#vision"
+                    className="hover:text-[#00ff00] transition-colors"
+                  >
+                    Vision
+                  </a>
+                  <button
+                    onClick={() => setIsDarkMode(!isDarkMode)}
+                    className="p-2 rounded-full hover:bg-gray-800 dark:hover:bg-gray-700 transition-colors"
+                    aria-label="Toggle dark mode"
+                  >
+                    {isDarkMode ? (
+                      <Sun className="w-5 h-5 text-[#00ff00]" />
+                    ) : (
+                      <Moon className="w-5 h-5 text-[#00ff00]" />
+                    )}
+                  </button>
+                  {currentUser ? (
+                    <div className="relative">
+                      <button
+                        onClick={() => setIsMenuOpen(!isMenuOpen)}
+                        className="inline-flex items-center space-x-2 bg-[#00ff00] text-black px-4 py-2 rounded-full hover:bg-[#00cc00] transition-colors"
+                      >
+                        <span>Menu</span>
+                        <ChevronRight className="w-4 h-4" />
+                      </button>
+                      {isMenuOpen && (
+                        <div className="absolute right-0 mt-2 w-48 bg-white/10 dark:bg-black/10 backdrop-blur-md border border-[#00ff00]/20 rounded-lg shadow-lg py-2">
+                          <a
+                            href="#"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              setShowDashboard(true);
+                            }}
+                            className="block px-4 py-2 hover:bg-[#00ff00]/10 transition-colors"
+                          >
+                            Dashboard
+                          </a>
+                          <a href="#" className="block px-4 py-2 hover:bg-[#00ff00]/10 transition-colors">Book a Demo</a>
+                          <a href="#" className="block px-4 py-2 hover:bg-[#00ff00]/10 transition-colors">API Access</a>
+                        </div>
+                      )}
+                    </div>
+                  ) : (
                     <button
-                      onClick={() => setIsMenuOpen(!isMenuOpen)}
+                      onClick={() => setIsModalOpen(true)}
                       className="inline-flex items-center space-x-2 bg-[#00ff00] text-black px-4 py-2 rounded-full hover:bg-[#00cc00] transition-colors"
                     >
-                      <span>Menu</span>
+                      <span>Sign In</span>
                       <ChevronRight className="w-4 h-4" />
                     </button>
-                    {isMenuOpen && (
-                      <div className="absolute right-0 mt-2 w-48 bg-white/10 dark:bg-black/10 backdrop-blur-md border border-[#00ff00]/20 rounded-lg shadow-lg py-2">
-                        <a
-                          href="#"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            setShowDashboard(true);
-                          }}
-                          className="block px-4 py-2 hover:bg-[#00ff00]/10 transition-colors"
-                        >
-                          Dashboard
-                        </a>
-                        <a href="#" className="block px-4 py-2 hover:bg-[#00ff00]/10 transition-colors">Book a Demo</a>
-                        <a href="#" className="block px-4 py-2 hover:bg-[#00ff00]/10 transition-colors">API Access</a>
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <button
-                    onClick={() => setIsModalOpen(true)}
-                    className="inline-flex items-center space-x-2 bg-[#00ff00] text-black px-4 py-2 rounded-full hover:bg-[#00cc00] transition-colors"
-                  >
-                    <span>Sign In</span>
-                    <ChevronRight className="w-4 h-4" />
-                  </button>
-                )}
+                  )}
+                </div>
+              </div>
+            </nav>
+
+            <div className="relative container mx-auto px-6 py-24 md:py-32">
+              <div
+                className={`transition-all duration-1000 transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                  }`}
+              >
+                <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-[#00ff00] to-[#00cc00] bg-clip-text text-transparent mb-8">
+                  Straight Outta Area 51
+                </h1>
+                <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl">
+                  Advanced AI solutions beyond conventional boundaries. Welcome to
+                  the next evolution of technology.
+                </p>
+                <a
+                  href="tel:+263786838849"
+                  className="group flex items-center space-x-2 bg-[#00ff00] hover:bg-[#00cc00] text-black font-bold px-8 py-3 rounded-full transition-all w-fit"
+                >
+                  <span>Call Us Now</span>
+                  <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </a>
               </div>
             </div>
-          </nav>
-
-          <div className="relative container mx-auto px-6 py-24 md:py-32">
-            <div
-              className={`transition-all duration-1000 transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-                }`}
-            >
-              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-[#00ff00] to-[#00cc00] bg-clip-text text-transparent mb-8">
-                Straight Outta Area 51
-              </h1>
-              <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl">
-                Advanced AI solutions beyond conventional boundaries. Welcome to
-                the next evolution of technology.
-              </p>
-              <a
-                href="tel:+263786838849"
-                className="group flex items-center space-x-2 bg-[#00ff00] hover:bg-[#00cc00] text-black font-bold px-8 py-3 rounded-full transition-all w-fit"
-              >
-                <span>Call Us Now</span>
-                <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </div>
           </div>
-        </div>
+        </section>
 
         {/* Enhanced Services Section */}
         <section
