@@ -220,6 +220,16 @@ export const Pricing = () => {
                   <p className="text-gray-400 mb-6">
                     Custom solutions for large organizations with specific requirements
                   </p>
+                  <div className="mb-8">
+                    <h4 className="text-[#00ff00] font-bold mb-4">Suggested Solutions</h4>
+                    <select className="w-full p-3 rounded-lg bg-white/5 dark:bg-black/5 backdrop-blur-md border border-[#00ff00]/20 text-gray-400 mb-6">
+                      <option value="">Select a solution package</option>
+                      <option value="ai_suite">AI Suite - Complete AI Integration</option>
+                      <option value="security">Advanced Security Package</option>
+                      <option value="automation">Enterprise Automation Suite</option>
+                      <option value="custom">Custom Solution Package</option>
+                    </select>
+                  </div>
                   <form className="space-y-4">
                     <input
                       type="text"
@@ -252,7 +262,7 @@ export const Pricing = () => {
               <div className="max-w-2xl mx-auto space-y-4">
                 {faqs.map((faq, index) => (
                   <motion.div
-                
+
                     key={index}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
