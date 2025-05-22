@@ -1,8 +1,7 @@
-
 import React, { useEffect, useState } from 'react';
-import { useAuth } from '../AuthContext';
+import { useAuth } from '../hooks/useAuth';
 import { doc, getDoc } from 'firebase/firestore';
-import { db } from '../firebase';
+import { db } from '../config/firebase';
 
 interface UserData {
   displayName: string;

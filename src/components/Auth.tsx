@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { useAuth } from '../AuthContext';
+import { useAuth } from '../hooks/useAuth';
 
 export const Auth: React.FC = () => {
   const { currentUser, signInWithGoogle, signOut } = useAuth();
