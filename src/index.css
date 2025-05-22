@@ -9,15 +9,6 @@
     font-family: 'Exo 2', sans-serif;
   }
 
-  @keyframes border-spin {
-    0% {
-      background-position: 0% 50%;
-    }
-    100% {
-      background-position: 200% 50%;
-    }
-  }
-
   @keyframes fade-in {
     from {
       opacity: 0;
@@ -48,26 +39,6 @@
 
   .animate-pulse-scale {
     animation: pulse-scale 2s infinite;
-  }
-
-  .animate-border {
-    position: relative;
-  }
-
-  .animate-border::before {
-    content: '';
-    position: absolute;
-    inset: -2px;
-    z-index: -1;
-    background: linear-gradient(90deg, #00ff00, #003300, #00ff00);
-    background-size: 200% 100%;
-    border-radius: inherit;
-    animation: border-spin 3s linear infinite;
-    opacity: 0.5;
-  }
-
-  .group:hover .animate-border::before {
-    animation-play-state: paused;
   }
 
   .group:hover .check-icon {
