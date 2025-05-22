@@ -174,6 +174,7 @@ function App() {
                 />
                 <span className="text-xl font-bold tracking-wider">MIllI</span>
               </div>
+              <div className="flex items-center space-x-4">
                 <button
                   className="md:hidden p-2"
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -273,12 +274,11 @@ function App() {
               </div>
             </div>
           </div>
-        </section>
 
         {/* Enhanced Services Section */}
         <section
           id="services"
-          className="absolute inset-0 bg-gradient-to-b from-[#e6ffe6]/20 dark:from-[#003300]/20 to-white dark:to-black z-0"
+          className="relative py-20 bg-gradient-to-b from-[#e6ffe6]/20 dark:from-[#003300]/20 to-white dark:to-black"
         >
           <div className="container mx-auto px-6">
             <h2 className="text-3xl font-bold mb-16 text-center">
