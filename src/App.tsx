@@ -188,7 +188,7 @@ function App() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
                 </svg>
               </button>
-              <div className={`${isMenuOpen ? 'flex' : 'hidden'} md:flex flex-col md:flex-row absolute md:relative top-full left-0 right-0 md:top-auto bg-white/95 dark:bg-black/95 md:bg-transparent backdrop-blur-lg md:backdrop-blur-none md:space-x-8 items-center py-4 md:py-0 space-y-4 md:space-y-0 border-b md:border-b-0 border-[#00ff00]/20`}>
+              <div className={`${isMenuOpen ? 'flex' : 'hidden'} md:flex flex-col md:flex-row absolute md:relative top-full left-0 right-0 md:top-auto bg-white/5 dark:bg-black/5 md:bg-transparent backdrop-blur-lg md:backdrop-blur-none md:space-x-8 items-center py-4 md:py-0 space-y-4 md:space-y-0 border-b md:border-b-0 border-[#00ff00]/20`}>
                 <a
                   href="#services"
                   className="hover:text-[#00ff00] transition-colors"
