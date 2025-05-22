@@ -51,19 +51,19 @@ const PricingCard = ({
         )}
 
         <div className="text-center mb-8">
-          <h3 className="text-2xl font-bold mb-2">{tier}</h3>
+          <h3 className="text-2xl font-bold mb-2 group-hover:text-[#00ff00] transition-colors">{tier}</h3>
           <p className="text-gray-400 mb-4">{description}</p>
           <div className="flex items-center justify-center mb-4">
-            <span className="text-4xl font-bold">$</span>
+            <span className="text-4xl font-bold group-hover:text-[#00ff00] transition-colors">$</span>
             <motion.span 
               key={isYearly ? yearlyPrice : price}
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-6xl font-bold"
+              className="text-6xl font-bold group-hover:text-[#00ff00] transition-colors"
             >
               {isYearly ? yearlyPrice : price}
             </motion.span>
-            <span className="text-gray-400 ml-2">/mo</span>
+            <span className="text-gray-400 ml-2 group-hover:text-[#00ff00] transition-colors">/mo</span>
           </div>
           {isYearly && (
             <p className="text-[#00ff00] text-sm">Save 20% with annual billing</p>
@@ -73,8 +73,8 @@ const PricingCard = ({
         <ul className="space-y-4 mb-8">
           {features.map((feature, index) => (
             <li key={index} className="flex items-center">
-              <Check className="w-5 h-5 text-[#00ff00] mr-2" />
-              <span>{feature}</span>
+              <Check className="w-5 h-5 text-gray-400 group-hover:text-[#00ff00] transition-colors mr-2" />
+              <span className="group-hover:text-[#00ff00] transition-colors">{feature}</span>
             </li>
           ))}
         </ul>
@@ -226,16 +226,6 @@ export const Pricing = () => {
                   <p className="text-gray-200 mb-6">
                     Custom solutions for large organizations with specific requirements
                   </p>
-                  <div className="mb-8">
-                    <h4 className="text-[#00ff00] font-bold mb-4">Suggested Solutions</h4>
-                    <select className="w-full p-3 rounded-lg bg-white/60 dark:bg-black/60 backdrop-blur-md border border-[#00ff00]/20 text-gray-200 mb-6">
-                      <option value="">Select a solution package</option>
-                      <option value="ai_suite">AI Suite - Complete AI Integration</option>
-                      <option value="security">Advanced Security Package</option>
-                      <option value="automation">Enterprise Automation Suite</option>
-                      <option value="custom">Custom Solution Package</option>
-                    </select>
-                  </div>
                   <form className="space-y-4">
                     <input
                       type="text"
