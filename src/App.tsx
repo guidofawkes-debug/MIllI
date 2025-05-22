@@ -168,7 +168,7 @@ function App() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#00ff00]/5 to-[#003300]/10 dark:from-[#00ff00]/10 dark:to-[#003300]/20" />
 
-          <nav className="relative z-10 container mx-auto px-6 py-4">
+          <nav className="relative z-10 container mx-auto px-6 py-4 bg-white/5 dark:bg-black/5 backdrop-blur-md border-b border-[#00ff00]/20">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-4">
                 <img
