@@ -191,7 +191,7 @@ function App() {
               <div 
   className={`${isMenuOpen ? 'translate-x-0 opacity-100' : '-translate-x-full md:translate-x-0 opacity-0 md:opacity-100'} 
   md:flex flex-col md:flex-row fixed md:relative inset-y-0 left-0 right-1/4 md:right-auto md:top-auto 
-  bg-white/95 dark:bg-black/95 md:bg-transparent backdrop-blur-lg md:backdrop-blur-none md:space-x-8 
+  bg-white/95 md:bg-transparent backdrop-blur-lg md:backdrop-blur-none md:space-x-8 
   items-center py-4 md:py-0 space-y-4 md:space-y-0 shadow-2xl md:shadow-none 
   transition-all duration-300 ease-in-out z-50 md:z-auto`}>
                 <a
@@ -341,14 +341,14 @@ function App() {
                   </h3>
                   <button
                     onClick={() => setActiveService(null)}
-                    className="text-gray-400 hover:text-[#00ff00] transition-colors"
+                    className="text-gray-300 hover:text-[#00ff00] transition-colors"
                   >
                     <X className="w-6 h-6" />
                   </button>
                 </div>
               </div>
               <div className="p-6">
-                <p className="text-gray-300 mb-8">
+                <p className="text-gray-200 mb-8">
                   {services[activeService].details.fullDescription}
                 </p>
 
@@ -362,7 +362,7 @@ function App() {
                         (feature, index) => (
                           <li
                             key={index}
-                            className="flex items-center text-gray-600 dark:text-gray-300"
+                            className="flex items-center text-gray-200 dark:text-gray-300"
                           >
                             <ChevronRight className="w-4 h-4 text-[#00ff00] mr-2" />
                             {feature}
@@ -380,7 +380,7 @@ function App() {
                         (benefit, index) => (
                           <li
                             key={index}
-                            className="flex items-center text-gray-600 dark:text-gray-300"
+                            className="flex items-center text-gray-200 dark:text-gray-300"
                           >
                             <ChevronRight className="w-4 h-4 text-[#00ff00] mr-2" />
                             {benefit}
@@ -403,7 +403,7 @@ function App() {
               <div className="md:w-1/2 mb-10 md:mb-0">
                 <Sparkles className="w-12 h-12 text-[#00ff00] mb-6" />
                 <h2 className="text-3xl font-bold mb-6">Beyond Human Limits</h2>
-                <p className="text-gray-600 dark:text-gray-300 mb-6">
+                <p className="text-gray-500 dark:text-gray-300 mb-6">
                   We're not just predicting the future - we're reverse engineering
                   it. Our team of rogue scientists and digital alchemists are
                   breaking the barriers between possible and impossible.

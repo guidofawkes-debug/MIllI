@@ -47,7 +47,7 @@ const PricingCard = ({
 
       <div className="text-center mb-8">
         <h3 className="text-2xl font-bold mb-2">{tier}</h3>
-        <p className="text-gray-400 mb-4">{description}</p>
+        <p className="text-gray-300 mb-4">{description}</p>
         <div className="flex items-center justify-center mb-4">
           <span className="text-4xl font-bold">$</span>
           <motion.span 
@@ -154,7 +154,7 @@ export const Pricing = () => {
           >
             Pricing for every stage of growth
           </motion.h1>
-          <p className="text-gray-400 text-lg mb-8">
+          <p className="text-gray-200 text-lg mb-8">
             Scale your AI capabilities with our flexible pricing options
           </p>
 
@@ -217,12 +217,12 @@ export const Pricing = () => {
               >
                 <div className="bg-white/10 dark:bg-black/10 backdrop-blur-md border border-[#00ff00]/20 rounded-2xl p-8">
                   <h3 className="text-2xl font-bold mb-4">Enterprise Solutions</h3>
-                  <p className="text-gray-400 mb-6">
+                  <p className="text-gray-200 mb-6">
                     Custom solutions for large organizations with specific requirements
                   </p>
                   <div className="mb-8">
                     <h4 className="text-[#00ff00] font-bold mb-4">Suggested Solutions</h4>
-                    <select className="w-full p-3 rounded-lg bg-white/5 dark:bg-black/5 backdrop-blur-md border border-[#00ff00]/20 text-gray-400 mb-6">
+                    <select className="w-full p-3 rounded-lg bg-white/60 dark:bg-black/60 backdrop-blur-md border border-[#00ff00]/20 text-gray-200 mb-6">
                       <option value="">Select a solution package</option>
                       <option value="ai_suite">AI Suite - Complete AI Integration</option>
                       <option value="security">Advanced Security Package</option>
