@@ -33,13 +33,21 @@ const PricingCard = ({
       transition={{ duration: 0.5 }}
       className="group relative"
     >
-      <div className="absolute -inset-0.5 bg-gradient-to-r from-[#00ff00] to-[#00cc00] rounded-2xl opacity-0 group-hover:opacity-100 blur transition duration-500" />
+      <div 
+        className="absolute -inset-[1px] bg-gradient-to-r from-[#00ff00] via-[#00cc00] to-[#00ff00] rounded-2xl opacity-0 
+        group-hover:opacity-100 blur transition-all duration-500 animate-gradient-x"
+        style={{
+          background: 'linear-gradient(90deg, #00ff00, #00cc00, #00ff00)',
+          backgroundSize: '200% 100%',
+          animation: 'gradient 3s linear infinite'
+        }}
+      />
       
       <div className={`relative p-6 rounded-2xl backdrop-blur-md ${
         isPopular 
           ? 'bg-white/10 dark:bg-black/10' 
           : 'bg-white/5 dark:bg-black/5'
-      } transition-all duration-500 group-hover:transform group-hover:scale-[1.02]`}>
+      } transition-all duration-500 group-hover:transform group-hover:scale-[1.02] group-hover:bg-black/20`}>
         {isPopular && (
           <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
             <span className="bg-[#00ff00] text-black px-4 py-1 rounded-full text-sm font-bold">
@@ -71,13 +79,14 @@ const PricingCard = ({
         <ul className="space-y-4 mb-8">
           {features.map((feature, index) => (
             <li key={index} className="flex items-center">
-              <Check className="w-5 h-5 text-[#00ff00] check-icon transition-colors duration-300 mr-2" />
+              <Check className="w-5 h-5 text-[#00ff00] group-hover:text-[#00cc00] transition-colors duration-300 mr-2" />
               <span>{feature}</span>
             </li>
           ))}
         </ul>
 
-        <button className="w-full py-3 rounded-full bg-[#00ff00] text-black font-bold hover:bg-[#00cc00] transition-all duration-300 transform group-hover:scale-105">
+        <button className="w-full py-3 rounded-full bg-[#00ff00] text-black font-bold hover:bg-[#00cc00] 
+          transition-all duration-300 transform group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-[#00ff00]/20">
           Get Started
         </button>
       </div>
