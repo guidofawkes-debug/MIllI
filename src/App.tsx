@@ -15,6 +15,7 @@ import {
   Instagram,
   Facebook,
   MessageCircle,
+  Store
 } from "lucide-react";
 import { Auth } from "./components/Auth";
 import { Pricing } from "./components/Pricing";
@@ -143,6 +144,30 @@ function App() {
         ],
       },
     },
+    {
+      icon: <Store className="w-8 h-8 text-[#00ff00]" />,
+      title: "Affiliate Landing Pages",
+      description: "High-converting affiliate landing pages that seamlessly integrate partner products while maintaining your brand identity.",
+      details: {
+        fullDescription: 
+          "Create professional affiliate landing pages with domain services, hosting solutions, and e-commerce integrations. Our pages are designed to maximize conversions while maintaining brand consistency.",
+        features: [
+          "Custom domain integration",
+          "Responsive design templates",
+          "E-commerce platform setup",
+          "Analytics dashboard",
+          "A/B testing capabilities"
+        ],
+        benefits: [
+          "Increased conversion rates",
+          "Professional brand presence",
+          "Seamless user experience",
+          "Performance tracking",
+          "Revenue optimization"
+        ]
+      },
+      link: "/affiliates"
+    }
   ];
 
   useEffect(() => {
