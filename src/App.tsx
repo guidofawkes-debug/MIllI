@@ -103,7 +103,7 @@ function App() {
       description: "Next-gen protection for modern threats",
       details: {
         fullDescription:
-          "Our Advanced Cybersecurity solutions combine AI-driven threat detection with zero-trust architecture to protect against sophisticated cyber attacks.",
+          "Our Advanced Cybersecurity solutions combine AI-driven threat detection with zero-trust architecture to protect against sophisticated cyber attacks, ransomware, and emerging threats in the cloud-native era.",
         features: [
           "Zero-Trust Architecture Implementation",
           "AI-Powered Threat Detection",
