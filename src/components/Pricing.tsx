@@ -79,7 +79,7 @@ const PricingCard = ({
         <ul className="space-y-4 mb-8">
           {features.map((feature, index) => (
             <li key={index} className="flex items-center">
-              <Check className="w-5 h-5 text-[#00ff00] group-hover:text-[#00cc00] transition-colors duration-300 mr-2" />
+              <Check className="w-5 h-5 text-[#00ff00] group-hover:text-black transition-colors duration-300 mr-2" />
               <span>{feature}</span>
             </li>
           ))}
