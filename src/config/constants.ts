@@ -16,7 +16,13 @@ export const ROUTES = {
   privacy: '/privacy',
   terms: '/terms',
   cookies: '/cookies',
-  security: '/security'
+  security: '/security',
+  affiliates: '/affiliates'
+};
+
+export const AFFILIATE_LINKS = {
+  studios: 'https://studios.netlify.app',
+  dnwStudios: 'https://dnwstudios.netlify.app'
 };
 
 export const THEME = {
